@@ -37,5 +37,30 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<html><head/><body/></html>", html);
         }        
+
+        [Fact]
+        public void HeadWithTitle()
+        {
+            // arrange 
+            var tag = Html(
+                Head(
+                    Title("my title")
+                ),
+                Body()
+            );
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal(
+                "<html>" + 
+                    "<head>" + 
+                        "<title>my title</title>" + 
+                    "</head>" + 
+                    "<body/>" + 
+                "</html>", 
+                html);
+        }        
     }
 }
