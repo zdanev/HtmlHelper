@@ -3,7 +3,7 @@ namespace HtmlHelper
     public enum InputType
     {
         Button,
-        
+
         Text,
 
         // todo...
@@ -13,7 +13,7 @@ namespace HtmlHelper
     {
         public InputType Type { get; }
 
-        public string Content { get; }
+        public new string Content { get; }
 
         public Input(InputType type, string content) : base("input", new Literal(content))
         {
