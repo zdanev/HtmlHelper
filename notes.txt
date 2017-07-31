@@ -1,0 +1,12 @@
+md HtmlHelper
+cd HtmlHelper
+dotnet new classlib
+dotnet restore
+dotnet build
+
+md HtmlHelper.Tests
+cd HtmlHelper.Tests
+dotnet new xunit
+dotnet restore
+dotnet add reference ..\HtmlHelper\HtmlHelper.csproj
+dotnet test
