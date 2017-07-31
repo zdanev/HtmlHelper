@@ -22,9 +22,14 @@ namespace HtmlHelper
             return new Html(head, body);
         }
 
-        public static Head Head(params IHtmlElement[] content)
+        public static Head Head(params IHeadElement[] content)
         {
             return new Head(content);
+        }
+
+        public static Title Title(string title)
+        {
+            return new Title(title);
         }
 
         public static Body Body(params IHtmlElement[] content)
