@@ -1,6 +1,6 @@
 namespace HtmlHelper
 {
-    public static class HtmlHelpers
+    public static partial class HtmlHelpers
     {
         public static Tag Tag(string name)
         {
@@ -30,6 +30,22 @@ namespace HtmlHelper
         public static Body Body(params IHtmlElement[] content)
         {
             return new Body(content);
+        }
+
+        public static Div Div(params IHtmlElement[] content)
+        {
+            return new Div(content);
+        }
+
+        public static Span Span(params IHtmlElement[] content)
+        {
+            return new Span(content);
+        }
+
+        public static Input Input(InputType type, string content)
+        {
+            return (Input)new Input(type, content)
+                .Attr("type", type.ToString().ToLower());
         }
     }
 }

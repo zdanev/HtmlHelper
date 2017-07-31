@@ -9,17 +9,15 @@ namespace HtmlHelper
     {
         public string Name { get; }
 
+        public List<HtmlAttribute> Attributes { get; }
+
         public List<IHtmlElement> Content { get; }
 
         public Tag()
         {
+            Attributes = new List<HtmlAttribute>();
             Content = new List<IHtmlElement>();
         }
-
-        // public Tag(string name) : this()
-        // {
-        //     Name = name;
-        // }
 
         public Tag(string name, params IHtmlElement[] content) : this()
         {
@@ -29,15 +27,18 @@ namespace HtmlHelper
 
         public string Render()
         {
-            if (!Content.Any())
-            {
-                return $"<{Name}/>";
-            }
-            else
-            {
-                var sb = new StringBuilder();
+            var sb = new StringBuilder();
 
-                sb.Append($"<{Name}>");
+            sb.Append($"<{Name}");
+
+            foreach (var attr in Attributes)
+            {
+                sb.Append($" {attr.Name}=\"{attr.Value}\"");
+            }
+
+            if (Content.Any())
+            {
+                sb.Append($">");
 
                 foreach (var element in Content)
                 {
@@ -45,9 +46,13 @@ namespace HtmlHelper
                 }
 
                 sb.Append($"</{Name}>");
-
-                return sb.ToString();
             }
+            else
+            {
+                sb.Append($"/>");
+            }
+
+            return sb.ToString();
         }
     }
 }
