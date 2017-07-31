@@ -1,7 +1,9 @@
+using System.Text;
+
 namespace HtmlHelper
 {
     public interface IHtmlElement
     {
-        string Render();
+        string Render(StringBuilder sb = null);
     }
 }
