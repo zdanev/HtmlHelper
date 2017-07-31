@@ -42,6 +42,11 @@ namespace HtmlHelper
             return new Script(src);
         }
 
+        public static Link Link(LinkRel rel, LinkType type, string href) 
+        {
+            return new Link(rel, type, href);
+        }
+
         public static Div Div(params IHtmlElement[] content)
         {
             return new Div(content);
