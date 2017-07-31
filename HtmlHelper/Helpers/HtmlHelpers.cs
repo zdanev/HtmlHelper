@@ -37,6 +37,11 @@ namespace HtmlHelper
             return new Body(content);
         }
 
+        public static Script Script(string src)
+        {
+            return new Script(src);
+        }
+
         public static Div Div(params IHtmlElement[] content)
         {
             return new Div(content);

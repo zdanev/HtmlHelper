@@ -13,10 +13,13 @@ namespace HtmlHelper
 
         public List<IHtmlElement> Content { get; }
 
+        public bool DoNotCollapse { get; set;}
+
         public Tag()
         {
             Attributes = new List<HtmlAttribute>();
             Content = new List<IHtmlElement>();
+            DoNotCollapse = false;
         }
 
         public Tag(string name, params IHtmlElement[] content) : this()
@@ -38,7 +41,7 @@ namespace HtmlHelper
                 sb.Append($" {attr.Name}=\"{attr.Value}\"");
             }
 
-            if (Content.Any())
+            if (Content.Any() || DoNotCollapse)
             {
                 sb.Append($">");
 

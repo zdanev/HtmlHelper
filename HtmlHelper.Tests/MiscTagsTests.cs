@@ -31,5 +31,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<a href=\"http://google.com/\">google</a>", html);            
         }
+
+        [Fact]
+        public void ScriptSrcTest()
+        {
+            // arrange
+            var tag = Script("my-script.js");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<script src=\"my-script.js\"></script>", html);            
+        }
     }
 }
