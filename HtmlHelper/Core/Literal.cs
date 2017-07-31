@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace HtmlHelper
 {
@@ -11,9 +12,15 @@ namespace HtmlHelper
             Value = value;
         }
 
-        public string Render()
+        public string Render(StringBuilder sb)
         {
-            return Value;
+            var returnResult = sb == null;
+
+            sb = sb ?? new StringBuilder();
+
+            sb.Append(Value);
+
+            return returnResult ? sb.ToString() : null;
         }
     }
 }

@@ -25,9 +25,11 @@ namespace HtmlHelper
             Content.AddRange(content);
         }
 
-        public string Render()
+        public string Render(StringBuilder sb = null)
         {
-            var sb = new StringBuilder();
+            var returnResult = sb == null;
+
+            sb = sb ?? new StringBuilder();
 
             sb.Append($"<{Name}");
 
@@ -42,7 +44,7 @@ namespace HtmlHelper
 
                 foreach (var element in Content)
                 {
-                    sb.Append(element.Render());
+                    sb.Append(element.Render(sb));
                 }
 
                 sb.Append($"</{Name}>");
@@ -52,7 +54,7 @@ namespace HtmlHelper
                 sb.Append($"/>");
             }
 
-            return sb.ToString();
+            return returnResult ? sb.ToString() : null;
         }
     }
 }
