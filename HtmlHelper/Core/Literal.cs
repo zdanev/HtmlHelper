@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace HtmlHelper
@@ -7,7 +8,19 @@ namespace HtmlHelper
     {
         public string Value { get; }
 
-        public Literal(string value)
+        public string Name => null;
+
+        public List<HtmlAttribute> Attributes { get; }
+
+        public List<IHtmlElement> Content { get; }
+
+        protected Literal()
+        {
+            Attributes = new List<HtmlAttribute>();
+            Content = new List<IHtmlElement>();
+        }
+
+        public Literal(string value) : this()
         {
             Value = value;
         }
