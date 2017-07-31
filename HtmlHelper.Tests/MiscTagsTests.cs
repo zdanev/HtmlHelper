@@ -44,5 +44,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<script src=\"my-script.js\"></script>", html);            
         }
+
+        [Fact]
+        public void LinkTest()
+        {
+            // arrange
+            var tag = Link(LinkRel.Stylesheet, LinkType.Text_Css, "stylesheet.css");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>", html);            
+        }        
     }
 }
