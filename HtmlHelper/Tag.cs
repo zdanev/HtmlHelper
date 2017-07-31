@@ -1,32 +1,52 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace HtmlHelper
 {
-    public class Tag
+    public class Tag : IHtmlElement
     {
         public string Name { get; }
 
-        public string Body { get; }
+        public List<IHtmlElement>  Body { get; }
 
-        public Tag(string name)
+        public Tag()
+        {
+            Body = new List<IHtmlElement>();
+        }
+
+        public Tag(string name) : this()
         {
             Name = name;
         }
-        public Tag(string name, string body)
+
+        public Tag(string name, params IHtmlElement[] body) : this(name)
         {
             Name = name;
-            Body = body;
+            Body.AddRange(body);
         }
 
         public string Render()
         {
-            if (string.IsNullOrEmpty(Body))
+            if (!Body.Any())
             {
                 return $"<{Name}/>";
             }
             else
             {
-                return $"<{Name}>{Body}</{Name}>";
+                var sb = new StringBuilder();
+
+                sb.Append($"<{Name}>");
+
+                foreach (var element in Body)
+                {
+                    sb.Append(element.Render());
+                }
+
+                sb.Append($"</{Name}>");
+
+                return sb.ToString();
             }
         }
     }

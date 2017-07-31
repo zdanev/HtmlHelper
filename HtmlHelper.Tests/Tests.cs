@@ -19,16 +19,30 @@ namespace HtmlHelper.Tests
         }
 
         [Fact]
-        public void NotEmptyTag()
+        public void TagWithContent()
         {
             // arrange 
-            var tag = new Tag("foo", "bar");
+            var tag = new Tag("foo", new Literal("bar"));
 
             // act
             var html = tag.Render();
 
             // assert
             Assert.Equal("<foo>bar</foo>", html);
+        }
+
+        [Fact]
+        public void NestedTags()
+        {
+            // arrange 
+            var tag = new Tag("foo", 
+                new Tag("bar"));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<foo><bar/></foo>", html);
         }
     }
 }
