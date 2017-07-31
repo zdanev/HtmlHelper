@@ -44,8 +44,12 @@ namespace HtmlHelper
 
         public static Input Input(InputType type, string content)
         {
-            return (Input)new Input(type, content)
-                .Attr("type", type.ToString().ToLower());
+            return new Input(type, content);
+        }
+
+        public static Anchor Anchor(string href, string text)
+        {
+            return new Anchor(href, text);
         }
     }
 }
