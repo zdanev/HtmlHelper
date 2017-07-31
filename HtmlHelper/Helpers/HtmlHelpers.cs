@@ -32,7 +32,7 @@ namespace HtmlHelper
             return new Title(title);
         }
 
-        public static Body Body(params IHtmlElement[] content)
+        public static Body Body(params IBodyElement[] content)
         {
             return new Body(content);
         }

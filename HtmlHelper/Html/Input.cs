@@ -9,7 +9,7 @@ namespace HtmlHelper
         // todo...
     }
 
-    public class Input : Tag
+    public class Input : Tag, IBodyElement
     {
         public InputType Type { get; }
 

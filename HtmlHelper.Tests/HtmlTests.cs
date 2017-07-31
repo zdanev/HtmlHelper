@@ -62,5 +62,38 @@ namespace HtmlHelper.Tests
                 "</html>", 
                 html);
         }        
+
+        [Fact]
+        public void HeadWithStylesheet()
+        {
+            // arrange 
+            var tag = Html(
+                Head(
+                    Title("my title"),
+                    Link(LinkRel.Stylesheet, LinkType.Text_Css, "stylesheet.css"),
+                    Script("script.js")                    
+                ),
+                Body(
+                    Div().Attr("class", "container") as IBodyElement
+                )
+            );
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal(
+                "<html>" + 
+                    "<head>" + 
+                        "<title>my title</title>" + 
+                        "<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>" + 
+                        "<script src=\"script.js\"></script>" +
+                    "</head>" + 
+                    "<body>" + 
+                        "<div class=\"container\"/>" + 
+                    "</body>" + 
+                "</html>", 
+                html);
+        }        
     }
 }
