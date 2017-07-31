@@ -1,5 +1,6 @@
 ﻿using System;
 using Xunit;
+using static HtmlHelper.HtmlHelpers;
 
 namespace HtmlHelper.Tests
 {
@@ -43,6 +44,19 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<foo><bar/></foo>", html);
+        }
+
+        [Fact]
+        public void Shorthand()
+        {
+            // arrange 
+            var tag = Tag("foo", Tag("bar", _("qqq")));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<foo><bar>qqq</bar></foo>", html);
         }
     }
 }
