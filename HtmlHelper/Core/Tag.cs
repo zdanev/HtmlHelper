@@ -9,27 +9,27 @@ namespace HtmlHelper
     {
         public string Name { get; }
 
-        public List<IHtmlElement>  Body { get; }
+        public List<IHtmlElement> Content { get; }
 
         public Tag()
         {
-            Body = new List<IHtmlElement>();
+            Content = new List<IHtmlElement>();
         }
 
-        public Tag(string name) : this()
-        {
-            Name = name;
-        }
+        // public Tag(string name) : this()
+        // {
+        //     Name = name;
+        // }
 
-        public Tag(string name, params IHtmlElement[] body) : this(name)
+        public Tag(string name, params IHtmlElement[] content) : this()
         {
             Name = name;
-            Body.AddRange(body);
+            Content.AddRange(content);
         }
 
         public string Render()
         {
-            if (!Body.Any())
+            if (!Content.Any())
             {
                 return $"<{Name}/>";
             }
@@ -39,7 +39,7 @@ namespace HtmlHelper
 
                 sb.Append($"<{Name}>");
 
-                foreach (var element in Body)
+                foreach (var element in Content)
                 {
                     sb.Append(element.Render());
                 }

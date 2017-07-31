@@ -4,7 +4,7 @@ using static HtmlHelper.HtmlHelpers;
 
 namespace HtmlHelper.Tests
 {
-    public class Tests
+    public class TagTests
     {
         [Fact]
         public void EmptyTag()
