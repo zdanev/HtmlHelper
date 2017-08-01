@@ -24,6 +24,14 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
+    public class PillBadge : Badge
+    {
+        public PillBadge(BadgeType type, params IBodyElement[] content) : base(type, content)
+        {
+            AddClass("badge-pill");
+        }
+    }
+
     public static partial class Helpers
     {
         public static Badge Badge(BadgeType type, params IBodyElement[] content)
@@ -45,5 +53,25 @@ namespace HtmlHelper.Bootstrap
         {
             return new Badge(BadgeType.Default, _(content));
         }
+
+        public static PillBadge PillBadge(BadgeType type, params IBodyElement[] content)
+        {
+            return new PillBadge(type, content);
+        }
+
+        public static PillBadge PillBadge(BadgeType type, string content)
+        {
+            return new PillBadge(type, _(content));
+        }
+
+        public static PillBadge PillBadge(params IBodyElement[] content)
+        {
+            return new PillBadge(BadgeType.Default, content);
+        }
+
+        public static PillBadge PillBadge(string content)
+        {
+            return new PillBadge(BadgeType.Default, _(content));
+        }    
     }
 }

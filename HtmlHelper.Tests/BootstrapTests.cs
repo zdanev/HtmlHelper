@@ -89,5 +89,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<span class=\"badge badge-default\">99</span>", html);
         }
+
+        [Fact]
+        public void PillBadgeTest()
+        {
+            // arrange
+            var tag = PillBadge("99");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<span class=\"badge badge-default badge-pill\">99</span>", html);
+        }
     }
 }
