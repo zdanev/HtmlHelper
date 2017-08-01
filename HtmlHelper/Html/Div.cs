@@ -2,7 +2,7 @@ namespace HtmlHelper
 {
     public class Div : Tag, IBodyElement
     {
-        public Div(params IHtmlElement[] content) : base("div", content)
+        public Div(params IBodyElement[] content) : base("div", content)
         {
         }
     }

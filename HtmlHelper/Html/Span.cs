@@ -2,7 +2,7 @@ namespace HtmlHelper
 {
     public class Span : Tag, IBodyElement
     {
-        public Span(params IHtmlElement[] content) : base("span", content)
+        public Span(params IBodyElement[] content) : base("span", content)
         {
         }        
     }
