@@ -6,12 +6,9 @@ namespace HtmlHelper
     {
         public string Href { get; }
 
-        public string Text { get; }
-
-        public Anchor(string href, string text) : base ("a", _(text))
+        public Anchor(string href, params BodyElement[] content) : base("a", content)
         {
             Href = href;
-            Text = text;
 
             this.Attr("href", href);
         }

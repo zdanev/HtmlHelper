@@ -2,11 +2,6 @@ namespace HtmlHelper
 {
     public static partial class Helpers
     {
-        public static Literal _(string value)
-        {
-            return new Literal(value);
-        }
-
         public static HtmlPage HtmlPage(Html html)
         {
             return new HtmlPage(html);
@@ -42,12 +37,12 @@ namespace HtmlHelper
             return new Link(rel, type, href);
         }
 
-        public static Div Div(params IBodyElement[] content)
+        public static Div Div(params BodyElement[] content)
         {
             return new Div(content);
         }
 
-        public static Span Span(params IBodyElement[] content)
+        public static Span Span(params BodyElement[] content)
         {
             return new Span(content);
         }

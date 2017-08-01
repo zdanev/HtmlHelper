@@ -25,7 +25,7 @@ namespace HtmlHelper.Tests
         public void BootstrapAlert()
         {
             // arrange
-            var tag = new Alert(AlertType.Success, _("alert"));
+            var tag = new Alert(AlertType.Success, "alert");
 
             // act
             var html = tag.Render();
@@ -40,9 +40,9 @@ namespace HtmlHelper.Tests
             // arrange
             var tag = new Alert(AlertType.Info, 
                 Strong("Heads up!"),
-                _(" This "),
+                " This ",
                 Anchor("#", "alert needs your attention"),
-                _(", but it's not super important."));
+                ", but it's not super important.");
 
             // act
             var html = tag.Render();
@@ -61,7 +61,7 @@ namespace HtmlHelper.Tests
             // arrange
             var tag = new Alert(AlertType.Warning, true,
                 Strong("Holy guacamole!"),
-                _(" You should check in on some of those fields below."));
+                " You should check in on some of those fields below.");
 
             // act
             var html = tag.Render();

@@ -23,7 +23,7 @@ namespace HtmlHelper.Tests
         public void TagWithContent()
         {
             // arrange 
-            var tag = Div(_("content"));
+            var tag = Div("content");
 
             // act
             var html = tag.Render();
@@ -50,13 +50,13 @@ namespace HtmlHelper.Tests
         public void Shorthand()
         {
             // arrange 
-            var tag = Div(Span(_("qqq")));
+            var tag = Div(Span("test"));
 
             // act
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<div><span>qqq</span></div>", html);
+            Assert.Equal("<div><span>test</span></div>", html);
         }
     }
 }

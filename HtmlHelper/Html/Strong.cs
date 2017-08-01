@@ -4,7 +4,7 @@ namespace HtmlHelper
 {
     public class Strong : BodyElement
     {
-        public Strong(string content) : base("strong", _(content))
+        public Strong(params BodyElement[] content) : base("strong", content)
         {
         }
     }

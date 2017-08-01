@@ -19,6 +19,7 @@ namespace HtmlHelper.Bootstrap
             AddClass("alert-" + type.ToString().ToLower());
             Attr("role", "alert");
 
+            // add alert-link class to all links
             content.Where(x => x is Anchor).ToList()
                 .ForEach(x => ((Anchor)x).AddClass("alert-link"));
         }
@@ -31,7 +32,7 @@ namespace HtmlHelper.Bootstrap
                 AddClass("fade");
                 AddClass("show");
 
-                var closeButton = Button(Span(_("&times;")).Attr("aria-hidden", "true"));
+                var closeButton = Button(Span("&times;").Attr("aria-hidden", "true"));
                 closeButton.AddClass("close");
                 closeButton.Attr("data-dismiss", "alert");
                 closeButton.Attr("aria-label", "Close");

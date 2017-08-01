@@ -15,7 +15,12 @@ namespace HtmlHelper
             Attributes.Add(new HtmlAttribute(name, value));
             
             return this;
-        }      
+        }     
+
+        public static implicit operator BodyElement(string value)
+        {
+            return new Literal(value);
+        } 
     }
     
     public class Body : Tag

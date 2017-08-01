@@ -6,7 +6,7 @@ namespace HtmlHelper
     {
         public string Value { get; }
 
-        public Title(string title) : base("title", _(title))
+        public Title(string title) : base("title", new Literal(title))
         {
             Value = title; 
         }

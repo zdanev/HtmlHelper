@@ -88,7 +88,7 @@ namespace HtmlHelper.Tests
         public void ButtonTest()
         {
             // arrange
-            var tag = Button(_("Click me!"));
+            var tag = Button("Click me!");
 
             // act
             var html = tag.Render();
