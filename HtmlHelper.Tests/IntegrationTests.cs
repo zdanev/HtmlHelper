@@ -11,7 +11,7 @@ namespace HtmlHelper.Tests
         public void IntegrationTest()
         {
             var page = new BootstrapPage("test",
-                new Alert(AlertType.Success, _("Success!")));
+                new Alert(AlertType.Success, "Success!"));
             
             var html = page.Render();
 

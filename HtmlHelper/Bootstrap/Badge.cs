@@ -16,7 +16,7 @@ namespace HtmlHelper.Bootstrap
     {
         public BadgeType Type { get; }
 
-        public Badge(BadgeType type, params IBodyElement[] content) : base(content)
+        public Badge(BadgeType type, params BodyElement[] content) : base(content)
         {
             Type = type;
             AddClass("badge");
@@ -26,7 +26,7 @@ namespace HtmlHelper.Bootstrap
 
     public class PillBadge : Badge
     {
-        public PillBadge(BadgeType type, params IBodyElement[] content) : base(type, content)
+        public PillBadge(BadgeType type, params BodyElement[] content) : base(type, content)
         {
             AddClass("badge-pill");
         }
@@ -34,44 +34,24 @@ namespace HtmlHelper.Bootstrap
 
     public static partial class Helpers
     {
-        public static Badge Badge(BadgeType type, params IBodyElement[] content)
+        public static Badge Badge(BadgeType type, params BodyElement[] content)
         {
             return new Badge(type, content);
         }
 
-        public static Badge Badge(BadgeType type, string content)
-        {
-            return new Badge(type, _(content));
-        }
-
-        public static Badge Badge(params IBodyElement[] content)
+        public static Badge Badge(params BodyElement[] content)
         {
             return new Badge(BadgeType.Default, content);
         }
 
-        public static Badge Badge(string content)
-        {
-            return new Badge(BadgeType.Default, _(content));
-        }
-
-        public static PillBadge PillBadge(BadgeType type, params IBodyElement[] content)
+        public static PillBadge PillBadge(BadgeType type, params BodyElement[] content)
         {
             return new PillBadge(type, content);
         }
 
-        public static PillBadge PillBadge(BadgeType type, string content)
-        {
-            return new PillBadge(type, _(content));
-        }
-
-        public static PillBadge PillBadge(params IBodyElement[] content)
+        public static PillBadge PillBadge(params BodyElement[] content)
         {
             return new PillBadge(BadgeType.Default, content);
         }
-
-        public static PillBadge PillBadge(string content)
-        {
-            return new PillBadge(BadgeType.Default, _(content));
-        }    
     }
 }

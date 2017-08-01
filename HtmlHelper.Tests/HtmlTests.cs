@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Xunit;
 using static HtmlHelper.Helpers;
 
@@ -6,6 +7,18 @@ namespace HtmlHelper.Tests
 {
     public class HtmlTests
     {
+        [Fact]
+        public void LiteralTest()
+        {
+            Literal literal = "test";
+
+            Assert.Equal(literal.Value, "test");
+
+            var div = Div("test");
+
+            Assert.Equal(((Literal)div.Content.First()).Value, "test");            
+        }
+
         [Fact]
         public void EmptyHtml()
         {

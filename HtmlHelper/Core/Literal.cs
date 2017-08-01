@@ -27,5 +27,10 @@ namespace HtmlHelper
 
             return returnResult ? sb.ToString() : null;
         }
+
+        public static implicit operator Literal(string value)
+        {
+            return new Literal(value);
+        }
     }
 }
