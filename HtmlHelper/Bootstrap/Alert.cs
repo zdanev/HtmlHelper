@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace HtmlHelper.Bootstrap
 {
     public enum AlertType
@@ -15,6 +17,9 @@ namespace HtmlHelper.Bootstrap
             AddClass("alert");
             AddClass("alert-" + type.ToString().ToLower());
             Attr("role", "alert");
+
+            content.Where(x => x is Anchor).ToList()
+                .ForEach(x => ((Anchor)x).AddClass("alert-link"));
         }
     }
 }

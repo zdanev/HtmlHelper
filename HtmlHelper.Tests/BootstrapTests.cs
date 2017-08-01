@@ -32,5 +32,26 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<div class=\"alert alert-success\" role=\"alert\">alert</div>", html);
         }
+
+        [Fact]
+        public void BootstrapAlertWithLink()
+        {
+            // arrange
+            var tag = new Alert(AlertType.Info, 
+                Strong("Heads up!"),
+                _(" This "),
+                Anchor("#", "alert needs your attention"),
+                _(", but it's not super important."));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class=\"alert alert-info\" role=\"alert\">" + 
+                    "<strong>Heads up!</strong> This <a href=\"#\" class=\"alert-link\">alert needs your attention</a>, but it's not super important." + 
+                "</div>", 
+                html);
+        }
     }
 }
