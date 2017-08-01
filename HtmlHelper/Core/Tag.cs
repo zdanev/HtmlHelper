@@ -30,7 +30,7 @@ namespace HtmlHelper
             Content.AddRange(content);
         }
 
-        public string Render(StringBuilder sb = null)
+        public virtual string Render(StringBuilder sb = null)
         {
             var returnResult = sb == null;
 
@@ -97,7 +97,6 @@ namespace HtmlHelper
             {
                 Attr("class", classAttr.Value + " " + @class);
             }
-
         }      
     }
 }

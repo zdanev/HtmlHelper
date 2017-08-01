@@ -4,20 +4,12 @@ using System.Text;
 
 namespace HtmlHelper
 {
-    public class Literal : IHtmlElement, IBodyElement
+    public class Literal : BodyElement
     {
         public string Value { get; }
 
-        public string Name => null;
-
-        public List<HtmlAttribute> Attributes { get; }
-
-        public List<IHtmlElement> Content { get; }
-
-        protected Literal()
+        protected Literal() : base(null)
         {
-            Attributes = new List<HtmlAttribute>();
-            Content = new List<IHtmlElement>();
         }
 
         public Literal(string value) : this()
@@ -25,7 +17,7 @@ namespace HtmlHelper
             Value = value;
         }
 
-        public string Render(StringBuilder sb)
+        public override string Render(StringBuilder sb = null)
         {
             var returnResult = sb == null;
 
