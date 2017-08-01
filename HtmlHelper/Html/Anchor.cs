@@ -2,7 +2,7 @@ using static HtmlHelper.HtmlHelpers;
 
 namespace HtmlHelper
 {
-    public class Anchor  : Tag, IBodyElement
+    public class Anchor  : BodyElement
     {
         public string Href { get; }
 
