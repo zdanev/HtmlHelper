@@ -76,5 +76,10 @@ namespace HtmlHelper
         {
             return new Meta(name, value);
         }
+
+        public static Strong Strong(string content)
+        {
+            return new Strong(content);
+        }
     }
 }

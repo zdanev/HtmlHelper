@@ -74,9 +74,30 @@ namespace HtmlHelper
 
         public Tag Attr(string name, string value)
         {
-            Attributes.Add(new HtmlAttribute(name, value));
-            
+            var attr = Attributes.SingleOrDefault(x => x.Name == name);
+            if (attr == null)
+            {
+                Attributes.Add(new HtmlAttribute(name, value));
+            }
+            else
+            {
+                attr.Value = value;
+            }
             return this;
+        }
+
+        public void AddClass(string @class)
+        {
+            var classAttr = Attributes.SingleOrDefault(x => x.Name == "class");
+            if (classAttr == null)
+            {
+                Attr("class", @class);
+            }
+            else
+            {
+                Attr("class", classAttr.Value + " " + @class);
+            }
+
         }      
     }
 }

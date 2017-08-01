@@ -69,6 +69,19 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<meta charset=\"utf-8\"/>", html);            
+        }    
+
+        [Fact]
+        public void StrongTest()
+        {
+            // arrange
+            var tag = Strong("test");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<strong>test</strong>", html);            
         }        
     }
 }

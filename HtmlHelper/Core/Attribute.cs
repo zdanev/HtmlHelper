@@ -4,7 +4,7 @@ namespace HtmlHelper
     {
         public string Name { get; }
 
-        public string Value { get; }
+        public string Value { get; set; }
 
         public HtmlAttribute(string name, string value)
         {
