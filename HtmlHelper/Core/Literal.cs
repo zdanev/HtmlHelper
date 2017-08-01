@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HtmlHelper
 {
-    public class Literal : IHtmlElement
+    public class Literal : IHtmlElement, IBodyElement
     {
         public string Value { get; }
 
