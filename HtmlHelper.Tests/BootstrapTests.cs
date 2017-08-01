@@ -19,5 +19,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.NotNull(html);
         }
+
+        [Fact]
+        public void BootstrapAlert()
+        {
+            // arrange
+            var tag = new Alert(AlertType.Success, _("alert"));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<div class=\"alert alert-success\" role=\"alert\">alert</div>", html);
+        }
     }
 }

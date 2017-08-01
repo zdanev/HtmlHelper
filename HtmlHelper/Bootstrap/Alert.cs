@@ -12,9 +12,9 @@ namespace HtmlHelper.Bootstrap
     {
         public Alert(AlertType type, params BodyElement[] content) : base(content)
         {
-            Attr("role", "alert");
             AddClass("alert");
             AddClass("alert-" + type.ToString().ToLower());
+            Attr("role", "alert");
         }
     }
 }
