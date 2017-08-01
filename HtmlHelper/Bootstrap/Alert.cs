@@ -1,4 +1,5 @@
 using System.Linq;
+using static HtmlHelper.HtmlHelpers;
 
 namespace HtmlHelper.Bootstrap
 {
@@ -30,7 +31,12 @@ namespace HtmlHelper.Bootstrap
                 AddClass("fade");
                 AddClass("show");
 
-               // Content.Insert(0, Button)
+                var closeButton = Button(Span(_("&times;")).Attr("aria-hidden", "true"));
+                closeButton.AddClass("close");
+                closeButton.Attr("data-dismiss", "alert");
+                closeButton.Attr("aria-label", "Close");
+
+                Content.Insert(0, closeButton);
             }
         }
     }
