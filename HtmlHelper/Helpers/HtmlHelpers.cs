@@ -71,5 +71,10 @@ namespace HtmlHelper
         {
             return new Anchor(href, text);
         }
+
+        public static Meta Meta(string name, string value)
+        {
+            return new Meta(name, value);
+        }
     }
 }

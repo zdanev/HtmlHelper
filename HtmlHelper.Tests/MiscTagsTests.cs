@@ -57,5 +57,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>", html);            
         }        
+
+        [Fact]
+        public void MetaTest()
+        {
+            // arrange
+            var tag = Meta("charset", "utf-8");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<meta charset=\"utf-8\"/>", html);            
+        }        
     }
 }
