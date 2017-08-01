@@ -1,7 +1,8 @@
 using System;
 using Xunit;
 using HtmlHelper.Bootstrap;
-using static HtmlHelper.HtmlHelpers;
+using static HtmlHelper.Helpers;
+using static HtmlHelper.Bootstrap.Helpers;
 
 namespace HtmlHelper.Tests
 {
@@ -74,6 +75,19 @@ namespace HtmlHelper.Tests
                     "<strong>Holy guacamole!</strong> You should check in on some of those fields below." +
                 "</div>", 
                 html);
+        }
+
+        [Fact]
+        public void BadgeTest()
+        {
+            // arrange
+            var tag = Badge("99");
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<span class=\"badge badge-default\">99</span>", html);
         }
     }
 }

@@ -1,17 +1,7 @@
 namespace HtmlHelper
 {
-    public static partial class HtmlHelpers
+    public static partial class Helpers
     {
-        // public static Tag Tag(string name)
-        // {
-        //     return new Tag(name);
-        // }
-
-        // public static Tag Tag(string name, params IHtmlElement[] content)
-        // {
-        //     return new Tag(name, content);
-        // }
-
         public static Literal _(string value)
         {
             return new Literal(value);
