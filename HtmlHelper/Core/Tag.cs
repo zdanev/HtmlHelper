@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HtmlHelper
 {
-    public class Tag : IHtmlElement
+    public abstract class Tag : IHtmlElement
     {
         public string Name { get; }
 
@@ -71,5 +71,12 @@ namespace HtmlHelper
 
             return returnResult ? sb.ToString() : null;
         }
+
+        public Tag Attr(string name, string value)
+        {
+            Attributes.Add(new HtmlAttribute(name, value));
+            
+            return this;
+        }      
     }
 }

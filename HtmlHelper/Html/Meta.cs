@@ -1,6 +1,6 @@
 namespace HtmlHelper
 {
-    public class Meta : Tag
+    public class Meta : HeadElement
     {
         public Meta(string name, string value) : base("meta")
         {

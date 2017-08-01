@@ -10,53 +10,53 @@ namespace HtmlHelper.Tests
         public void EmptyTag()
         {
             // arrange 
-            var tag = new Tag("test");
+            var tag = new Div();
 
             // act
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<test/>", html);
+            Assert.Equal("<div/>", html);
         }
 
         [Fact]
         public void TagWithContent()
         {
             // arrange 
-            var tag = new Tag("foo", new Literal("bar"));
+            var tag = Div(_("content"));
 
             // act
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<foo>bar</foo>", html);
+            Assert.Equal("<div>content</div>", html);
         }
 
         [Fact]
         public void NestedTags()
         {
             // arrange 
-            var tag = new Tag("foo", 
-                new Tag("bar"));
+            var tag = new Div(
+                new Span());
 
             // act
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<foo><bar/></foo>", html);
+            Assert.Equal("<div><span/></div>", html);
         }
 
         [Fact]
         public void Shorthand()
         {
             // arrange 
-            var tag = Tag("foo", Tag("bar", _("qqq")));
+            var tag = Div(Span(_("qqq")));
 
             // act
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<foo><bar>qqq</bar></foo>", html);
+            Assert.Equal("<div><span>qqq</span></div>", html);
         }
     }
 }
