@@ -10,9 +10,7 @@ namespace HtmlHelper
         Text_Css
     }
 
-    
-
-    public class Link : Tag, IHeadElement
+    public class Link : HeadElement
     {
         public LinkRel Rel { get; }
 

@@ -1,6 +1,6 @@
 namespace HtmlHelper
 {
-    public class Script : Tag, IHeadElement
+    public class Script : HeadElement
     {
         public string Src { get; }
 
