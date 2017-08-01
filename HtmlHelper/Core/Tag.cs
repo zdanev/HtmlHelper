@@ -13,7 +13,9 @@ namespace HtmlHelper
 
         public List<IHtmlElement> Content { get; }
 
-        public bool DoNotCollapse { get; set;}
+        public bool DoNotCollapse { get; set; } // i.e. <script></script>
+
+        public bool DoNotClose { get; set; } // i.e. <!DOCTYPE html> 
 
         public Tag()
         {
@@ -50,11 +52,21 @@ namespace HtmlHelper
                     sb.Append(element.Render(sb));
                 }
 
-                sb.Append($"</{Name}>");
+                if (!DoNotClose)
+                {
+                    sb.Append($"</{Name}>");
+                }
             }
             else
             {
-                sb.Append($"/>");
+                if (DoNotClose)
+                {
+                    sb.Append($">");
+                }
+                else
+                {
+                    sb.Append($"/>");
+                }
             }
 
             return returnResult ? sb.ToString() : null;
