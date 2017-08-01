@@ -82,6 +82,19 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<strong>test</strong>", html);            
-        }        
+        }      
+
+        [Fact]
+        public void ButtonTest()
+        {
+            // arrange
+            var tag = Button(_("Click me!"));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal("<button type=\"button\">Click me!</button>", html);            
+        }      
     }
 }

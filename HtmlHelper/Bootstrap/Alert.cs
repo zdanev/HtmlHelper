@@ -21,5 +21,17 @@ namespace HtmlHelper.Bootstrap
             content.Where(x => x is Anchor).ToList()
                 .ForEach(x => ((Anchor)x).AddClass("alert-link"));
         }
+
+        public Alert(AlertType type, bool dismissable, params BodyElement[] content) : this(type, content)
+        {
+            if (dismissable) 
+            {
+                AddClass("alert-dismissible");
+                AddClass("fade");
+                AddClass("show");
+
+               // Content.Insert(0, Button)
+            }
+        }
     }
 }
