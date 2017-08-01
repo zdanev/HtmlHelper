@@ -52,12 +52,12 @@ namespace HtmlHelper
             return new Link(rel, type, href);
         }
 
-        public static Div Div(params IHtmlElement[] content)
+        public static Div Div(params IBodyElement[] content)
         {
             return new Div(content);
         }
 
-        public static Span Span(params IHtmlElement[] content)
+        public static Span Span(params IBodyElement[] content)
         {
             return new Span(content);
         }
