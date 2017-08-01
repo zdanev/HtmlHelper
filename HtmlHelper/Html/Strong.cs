@@ -1,4 +1,4 @@
-using static HtmlHelper.HtmlHelpers;
+using static HtmlHelper.Helpers;
 
 namespace HtmlHelper
 {

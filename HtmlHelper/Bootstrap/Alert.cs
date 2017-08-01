@@ -1,5 +1,5 @@
 using System.Linq;
-using static HtmlHelper.HtmlHelpers;
+using static HtmlHelper.Helpers;
 
 namespace HtmlHelper.Bootstrap
 {
