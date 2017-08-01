@@ -81,5 +81,10 @@ namespace HtmlHelper
         {
             return new Strong(content);
         }
+
+        public static Button Button(params BodyElement[] content)
+        {
+            return new Button(content);
+        }
     }
 }
