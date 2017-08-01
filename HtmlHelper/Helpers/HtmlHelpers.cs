@@ -17,6 +17,11 @@ namespace HtmlHelper
             return new Literal(value);
         }
 
+        public static HtmlPage HtmlPage(Html html)
+        {
+            return new HtmlPage(html);
+        }
+
         public static Html Html(Head head, Body body)
         {
             return new Html(head, body);

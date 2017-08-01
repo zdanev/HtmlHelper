@@ -94,6 +94,24 @@ namespace HtmlHelper.Tests
                     "</body>" + 
                 "</html>", 
                 html);
+        }
+
+        [Fact]
+        public void HtmlWithDocType()
+        {
+            // arrange 
+            var page = HtmlPage(
+                Html(
+                    Head(),
+                    Body()
+                )
+            );
+
+            // act
+            var html = page.Render();
+
+            // assert
+            Assert.Equal("<!DOCTYPE html><html><head/><body/></html>", html);
         }        
     }
 }
