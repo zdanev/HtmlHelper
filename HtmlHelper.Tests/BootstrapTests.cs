@@ -53,5 +53,27 @@ namespace HtmlHelper.Tests
                 "</div>", 
                 html);
         }
+
+        [Fact]
+        public void BootstrapDismissableAlert()
+        {
+            // arrange
+            var tag = new Alert(AlertType.Warning, true,
+                Strong("Holy guacamole!"),
+                _(" You should check in on some of those fields below."));
+
+            // act
+            var html = tag.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">" + 
+                    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
+                        "<span aria-hidden=\"true\">&times;</span>" +
+                    "</button>" +
+                    "<strong>Holy guacamole!</strong> You should check in on some of those fields below." +
+                "</div>", 
+                html);
+        }
     }
 }
