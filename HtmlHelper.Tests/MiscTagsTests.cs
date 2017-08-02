@@ -108,6 +108,30 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<h4>test</h4>", html);
-        }      
+        }
+        
+        [Fact]
+        public void UnorderedListTest()
+        {
+            // arrange
+            var ul = UL(
+                LI("item1"),
+                LI("item2"),
+                LI("item3")
+            );
+
+            // act
+            var html = ul.Render();
+
+            // assert
+            Assert.Equal(
+                "<ul>" +
+                    "<li>item1</li>" +
+                    "<li>item2</li>" +
+                    "<li>item3</li>" +
+                "</ul>",
+                html);
+            }
+        }
     }
 }
