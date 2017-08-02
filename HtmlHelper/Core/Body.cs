@@ -29,4 +29,12 @@ namespace HtmlHelper
         {
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Body Body(params IBodyElement[] content)
+        {
+            return new Body(content);
+        }
+    }    
 }

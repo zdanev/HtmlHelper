@@ -29,4 +29,12 @@ namespace HtmlHelper
             this.Attr("href", href);
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Link Link(LinkRel rel, LinkType type, string href) 
+        {
+            return new Link(rel, type, href);
+        }
+    }    
 }

@@ -7,4 +7,12 @@ namespace HtmlHelper
             this.Attr(name, value);
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Meta Meta(string name, string value)
+        {
+            return new Meta(name, value);
+        }
+    }    
 }

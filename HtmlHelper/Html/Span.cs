@@ -6,4 +6,11 @@ namespace HtmlHelper
         {
         }        
     }
+
+    public static partial class Helpers
+    {        public static Span Span(params BodyElement[] content)
+        {
+            return new Span(content);
+        }
+    }    
 }

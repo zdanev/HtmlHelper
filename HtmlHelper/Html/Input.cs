@@ -23,4 +23,12 @@ namespace HtmlHelper
             this.Attr("type", type.ToString().ToLower());
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Input Input(InputType type, string content)
+        {
+            return new Input(type, content);
+        }
+    }    
 }

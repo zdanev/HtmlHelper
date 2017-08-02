@@ -10,10 +10,10 @@ namespace HtmlHelper.Tests
         public void InputTypeText()
         {
             // arrange 
-            var tag = Input(InputType.Button, "click me");
+            var input = Input(InputType.Button, "click me");
 
             // act
-            var html = tag.Render();
+            var html = input.Render();
 
             // assert
             Assert.Equal("<input type=\"button\">click me</input>", html);
@@ -23,10 +23,10 @@ namespace HtmlHelper.Tests
         public void AnchorTest()
         {
             // arrange 
-            var tag = Anchor("http://google.com/", "google");
+            var anchor = Anchor("http://google.com/", "google");
 
             // act
-            var html = tag.Render();
+            var html = anchor.Render();
 
             // assert
             Assert.Equal("<a href=\"http://google.com/\">google</a>", html);            
@@ -36,10 +36,10 @@ namespace HtmlHelper.Tests
         public void ScriptSrcTest()
         {
             // arrange
-            var tag = Script("my-script.js");
+            var script = Script("my-script.js");
 
             // act
-            var html = tag.Render();
+            var html = script.Render();
 
             // assert
             Assert.Equal("<script src=\"my-script.js\"></script>", html);            
@@ -49,10 +49,10 @@ namespace HtmlHelper.Tests
         public void LinkTest()
         {
             // arrange
-            var tag = Link(LinkRel.Stylesheet, LinkType.Text_Css, "stylesheet.css");
+            var link = Link(LinkRel.Stylesheet, LinkType.Text_Css, "stylesheet.css");
 
             // act
-            var html = tag.Render();
+            var html = link.Render();
 
             // assert
             Assert.Equal("<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>", html);            
@@ -62,10 +62,10 @@ namespace HtmlHelper.Tests
         public void MetaTest()
         {
             // arrange
-            var tag = Meta("charset", "utf-8");
+            var meta = Meta("charset", "utf-8");
 
             // act
-            var html = tag.Render();
+            var html = meta.Render();
 
             // assert
             Assert.Equal("<meta charset=\"utf-8\"/>", html);            
@@ -75,10 +75,10 @@ namespace HtmlHelper.Tests
         public void StrongTest()
         {
             // arrange
-            var tag = Strong("test");
+            var strong = Strong("test");
 
             // act
-            var html = tag.Render();
+            var html = strong.Render();
 
             // assert
             Assert.Equal("<strong>test</strong>", html);            
@@ -88,13 +88,26 @@ namespace HtmlHelper.Tests
         public void ButtonTest()
         {
             // arrange
-            var tag = Button("Click me!");
+            var button = Button("Click me!");
 
             // act
-            var html = tag.Render();
+            var html = button.Render();
 
             // assert
             Assert.Equal("<button type=\"button\">Click me!</button>", html);            
+        }
+
+        [Fact]
+        public void HeadingTest()
+        {
+            // arrange
+            var h4 = H4("test");
+
+            // act
+            var html = h4.Render();
+
+            // assert
+            Assert.Equal("<h4>test</h4>", html);
         }      
     }
 }

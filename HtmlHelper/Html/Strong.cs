@@ -8,4 +8,12 @@ namespace HtmlHelper
         {
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Strong Strong(string content)
+        {
+            return new Strong(content);
+        }
+    }    
 }
