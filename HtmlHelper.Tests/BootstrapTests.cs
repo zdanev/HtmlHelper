@@ -59,7 +59,7 @@ namespace HtmlHelper.Tests
         public void BootstrapDismissableAlert()
         {
             // arrange
-            var tag = new Alert(AlertType.Warning, true,
+            var tag = new DismissibleAlert(AlertType.Warning,
                 Strong("Holy guacamole!"),
                 " You should check in on some of those fields below.");
 
