@@ -12,4 +12,12 @@ namespace HtmlHelper
             this.Attr("src", src);
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Script Script(string src)
+        {
+            return new Script(src);
+        }
+    }    
 }

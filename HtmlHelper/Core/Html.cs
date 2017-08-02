@@ -13,4 +13,12 @@ namespace HtmlHelper
             Body = body;
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Html Html(Head head, Body body)
+        {
+            return new Html(head, body);
+        }
+    }    
 }

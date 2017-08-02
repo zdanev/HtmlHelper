@@ -11,4 +11,12 @@ namespace HtmlHelper
             Value = title; 
         }
     }
+    public static partial class Helpers
+    {
+        public static Title Title(string title)
+        {
+            return new Title(title);
+        
+        }
+    }
 }

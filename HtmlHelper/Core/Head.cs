@@ -24,4 +24,12 @@ namespace HtmlHelper
         {
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Head Head(params IHeadElement[] content)
+        {
+            return new Head(content);
+        }
+    }    
 }

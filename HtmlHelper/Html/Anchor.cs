@@ -13,4 +13,12 @@ namespace HtmlHelper
             this.Attr("href", href);
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Anchor Anchor(string href, string text)
+        {
+            return new Anchor(href, text);
+        }
+    }    
 }

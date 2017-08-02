@@ -10,4 +10,12 @@ namespace HtmlHelper
             DoNotClose = true;
         }
     }
+
+    public static partial class Helpers
+    {
+        public static HtmlPage HtmlPage(Html html)
+        {
+            return new HtmlPage(html);
+        }
+    }    
 }
