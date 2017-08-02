@@ -102,5 +102,40 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<span class=\"badge badge-default badge-pill\">99</span>", html);
         }
+
+        [Fact]
+        public void NavBarTest()
+        {
+            // arrange
+            var nav = NavBar(
+                NavBarToggler(),
+                NavBarBrand("MyApp", "/"),
+                NavBarItems(
+                    NavBarItem("Item 1", "#", true),
+                    NavBarItem("Item 2", "#"),
+                    NavBarItem("Item 3", "#")
+                )
+            );
+
+            // act
+            var html = nav.Render();
+
+            // assert
+            Assert.Equal(
+                "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inverse\">" + 
+                    "<button type=\"button\" class=\"navbar-toggler navbar-toggler-right\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">" + 
+                        "<span class=\"navbar-toggler-icon\"></span>" + 
+                    "</button>" + 
+                    "<a href=\"/\" class=\"navbar-brand\">MyApp</a>" + 
+                    "<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">" + 
+                        "<ul class=\"navbar-nav mr-auto\">" + 
+                            "<li class=\"nav-item active\"><a href=\"#\" class=\"nav-link\">Item 1</a></li>" + 
+                            "<li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Item 2</a></li>" + 
+                            "<li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Item 3</a></li>" + 
+                        "</ul>" + 
+                    "</div>" +
+                "</nav>", 
+                html);
+        }
     }
 }

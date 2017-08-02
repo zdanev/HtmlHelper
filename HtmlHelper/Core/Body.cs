@@ -15,6 +15,12 @@ namespace HtmlHelper
             Attributes.Add(new HtmlAttribute(name, value));
             
             return this;
+        }
+
+        public BodyElement Class(string @class)
+        {
+            AddClass(@class);
+            return this;
         }     
 
         public static implicit operator BodyElement(string value)

@@ -41,4 +41,17 @@ namespace HtmlHelper.Bootstrap
                 Content.Insert(0, closeButton);
         }
     }
+
+    public static partial class Helpers
+    {
+        public static Alert Alert(AlertType type, params BodyElement[] content)
+        {
+            return new Alert(type, content);
+        }
+
+        public static DismissibleAlert DismissibleAlert(AlertType type, params BodyElement[] content)
+        {
+            return new DismissibleAlert(type, content);
+        }
+    }
 }

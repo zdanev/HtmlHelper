@@ -29,4 +29,12 @@ namespace HtmlHelper.Bootstrap
         {
         }
     }
+
+    public static partial class Helpers
+    {
+        public static BootstrapPage BootstrapPage(string title, params IBodyElement[] content)
+        {
+            return new BootstrapPage(title, content);
+        }
+    }
 }
