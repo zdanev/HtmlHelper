@@ -109,7 +109,7 @@ namespace HtmlHelper.Tests
             // arrange
             var nav = NavBar(
                 NavBarToggler(),
-                NavBarBrand("MyApp", "/"),
+                NavBarLinkBrand("MyApp", "#"),
                 NavBarItems(
                     NavBarItem("Item 1", "#", true),
                     NavBarItem("Item 2", "#"),
@@ -126,7 +126,7 @@ namespace HtmlHelper.Tests
                     "<button type=\"button\" class=\"navbar-toggler navbar-toggler-right\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">" + 
                         "<span class=\"navbar-toggler-icon\"></span>" + 
                     "</button>" + 
-                    "<a href=\"/\" class=\"navbar-brand\">MyApp</a>" + 
+                    "<a href=\"#\" class=\"navbar-brand\">MyApp</a>" + 
                     "<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">" + 
                         "<ul class=\"navbar-nav mr-auto\">" + 
                             "<li class=\"nav-item active\"><a href=\"#\" class=\"nav-link\">Item 1</a></li>" + 

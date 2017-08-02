@@ -1,3 +1,4 @@
+using HtmlHelper;
 using static HtmlHelper.Helpers;
 
 namespace HtmlHelper.Bootstrap
@@ -34,9 +35,18 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public class NavBarBrand : Anchor, INavBarElement
+    public class NavBarBrand : H1, INavBarElement
     {
-        public NavBarBrand(string title, string href) : base(href, title)
+        public NavBarBrand(string title) : base(title)
+        {
+            AddClass("navbar-brand");
+            AddClass("mb-0");
+        }
+    }
+
+    public class NavBarLinkBrand : Anchor, INavBarElement
+    {
+        public NavBarLinkBrand(string title, string href) : base(href, title)
         {
             AddClass("navbar-brand");
         }
@@ -78,9 +88,14 @@ namespace HtmlHelper.Bootstrap
             return new NavBarToggler();
         }
 
-        public static NavBarBrand NavBarBrand(string title, string href)
+        public static NavBarBrand NavBarBrand(string title)
         {
-            return new NavBarBrand(title, href);
+            return new NavBarBrand(title);
+        }
+
+        public static NavBarLinkBrand NavBarLinkBrand(string title, string href)
+        {
+            return new NavBarLinkBrand(title, href);
         }
 
         public static NavBarItems NavBarItems(params NavBarItem[] items)
@@ -90,8 +105,7 @@ namespace HtmlHelper.Bootstrap
         
         public static NavBarItem NavBarItem(string title, string href, bool isActive = false)
         {
-            return new NavBarItem(title, href, isActive);
-            
+            return new NavBarItem(title, href, isActive);            
         }
     }
 }

@@ -14,7 +14,7 @@ namespace HtmlHelper.Tests
             var page = new BootstrapPage("test",
                 NavBar(
                     NavBarToggler(),
-                    NavBarBrand("MyApp", "/"),
+                    NavBarBrand("MyApp"),
                     NavBarItems(
                         NavBarItem("Menu 1", "#", true),
                         NavBarItem("Menu 2", "#"),
