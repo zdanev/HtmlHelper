@@ -12,42 +12,42 @@ namespace HtmlHelper
 
     public class H1 : Heading
     {
-        public H1(params IBodyElement[] content) : base(1, content)
+        public H1(params BodyElement[] content) : base(1, content)
         {
         }
     }
 
     public class H2 : Heading
     {
-        public H2(params IBodyElement[] content) : base(2, content)
+        public H2(params BodyElement[] content) : base(2, content)
         {
         }
     }
 
     public class H3 : Heading
     {
-        public H3(params IBodyElement[] content) : base(3, content)
+        public H3(params BodyElement[] content) : base(3, content)
         {
         }
     }
 
     public class H4 : Heading
     {
-        public H4(params IBodyElement[] content) : base(4, content)
+        public H4(params BodyElement[] content) : base(4, content)
         {
         }
     }
 
     public class H5 : Heading
     {
-        public H5(params IBodyElement[] content) : base(5, content)
+        public H5(params BodyElement[] content) : base(5, content)
         {
         }
     }
 
     public class H6 : Heading
     {
-        public H6(params IBodyElement[] content) : base(6, content)
+        public H6(params BodyElement[] content) : base(6, content)
         {
         }
     }
