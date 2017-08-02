@@ -2,6 +2,7 @@ using System.IO;
 using HtmlHelper.Bootstrap;
 using Xunit;
 using static HtmlHelper.Helpers;
+using static HtmlHelper.Bootstrap.Helpers;
 
 namespace HtmlHelper.Tests
 {
@@ -11,7 +12,18 @@ namespace HtmlHelper.Tests
         public void IntegrationTest()
         {
             var page = new BootstrapPage("test",
-                new Alert(AlertType.Success, "Success!"));
+                NavBar(
+                    NavBarToggler(),
+                    NavBarBrand("MyApp", "/"),
+                    NavBarItems(
+                        NavBarItem("Menu 1", "#", true),
+                        NavBarItem("Menu 2", "#"),
+                        NavBarItem("Menu 3", "#")
+                    )
+                ),
+                Div(
+                    DismissibleAlert(AlertType.Success, "Success!")
+                ).Class("container-flex"));
             
             var html = page.Render();
 

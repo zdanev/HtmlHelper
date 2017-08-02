@@ -2,7 +2,8 @@ namespace HtmlHelper
 {
     public enum LinkRel
     {
-        Stylesheet
+        Stylesheet,
+        Icon
     }
 
     public enum LinkType 

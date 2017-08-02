@@ -131,7 +131,6 @@ namespace HtmlHelper.Tests
                     "<li>item3</li>" +
                 "</ul>",
                 html);
-            }
         }
     }
 }
