@@ -11,6 +11,7 @@ namespace HtmlHelper.Tests
         [Fact]
         public void IntegrationTest()
         {
+            // arrange
             var page = new BootstrapPage("test",
                 NavBar(
                     NavBarToggler(),
@@ -21,21 +22,23 @@ namespace HtmlHelper.Tests
                         NavBarItem("Menu 3", "#")
                     )
                 ),
-                Div(
-                    DismissibleAlert(AlertType.Success, "Success!")
-                ).Class("container-flex"));
+                FluidGrid(
+                    Row(
+                        Cell(
+                            DismissibleAlert(AlertType.Success, "Success!")
+                        )
+                    )
+                ),
+                Footer(
+                    Span("footer").Class("text-muted")
+                )
+            );
             
+            // act
             var html = page.Render();
 
-            SaveToFile(".\\test.html", html);
-        }
-
-        private void SaveToFile(string fileName, string text)
-        {
-            using (var file = new StreamWriter(fileName))
-            {
-                file.Write(text);
-            }
+            // assert
+            html.SaveToFile(".\\test.html");
         }
     }
 }
