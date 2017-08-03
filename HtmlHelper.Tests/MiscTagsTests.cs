@@ -7,7 +7,7 @@ namespace HtmlHelper.Tests
     public class MiscTagTests
     {
          [Fact]
-        public void InputTypeText()
+        public void InputTypeTest()
         {
             // arrange 
             var input = Input(InputType.Button, "click me");
@@ -164,6 +164,19 @@ namespace HtmlHelper.Tests
                     "</tr>" +
                 "</table>",
                 html);
+        }
+
+        [Fact]
+        public void ParagraphTest()
+        {
+            // arrange
+            var p = P("text");
+        
+            // act
+            var html = p.Render();
+        
+            // assert
+            Assert.Equal("<p>text</p>", html);
         }
     }
 }
