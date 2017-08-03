@@ -30,6 +30,11 @@ namespace HtmlHelper.Bootstrap
 
         public int LargeCols { get; set;}
 
+        public Cell(params BodyElement[] content) : base(content)
+        {
+            AddClass("col");            
+        }
+
         public Cell(int smallCols, params BodyElement[] content) : base(content)
         {
             SmallCols = smallCols;
@@ -53,6 +58,11 @@ namespace HtmlHelper.Bootstrap
         public static Row Row(params Cell[] cells)
         {
             return new Row(cells);
+        }
+
+        public static Cell Cell(params BodyElement[] content)
+        {
+            return new Cell(content);
         }
 
         public static Cell Cell(int smallCols, params BodyElement[] content)
