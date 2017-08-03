@@ -21,9 +21,10 @@ namespace HtmlHelper.Tests
                         NavBarItem("Menu 3", "#")
                     )
                 ),
-                Div(
+                FluidContainer(
                     DismissibleAlert(AlertType.Success, "Success!")
-                ).Class("container-flex"));
+                )
+            );
             
             var html = page.Render();
 
