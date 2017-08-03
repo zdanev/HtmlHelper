@@ -28,6 +28,9 @@ namespace HtmlHelper.Tests
                             DismissibleAlert(AlertType.Success, "Success!")
                         )
                     )
+                ),
+                Footer(
+                    Span("footer").Class("text-muted")
                 )
             );
             

@@ -172,5 +172,24 @@ namespace HtmlHelper.Tests
                  "</div>",
                  html);
         }
+
+        [Fact]
+        public void FooterTest()
+        {
+            // arrange
+            var footer = Footer(Span("footer text"));
+            
+            // act
+            var html = footer.Render();
+
+            // assert
+            Assert.Equal(
+                "<footer class=\"footer\">" +
+                    "<div class=\"container\">" +
+                        "<span>footer text</span>" +
+                    "</div>" +
+                "</footer>",
+                html);
+        }
     }
 }
