@@ -137,5 +137,40 @@ namespace HtmlHelper.Tests
                 "</nav>", 
                 html);
         }
+
+        [Fact]
+        public void GridTest()
+        {
+            // arrange 
+            var grid = Grid(
+                Row(
+                    Cell(6),
+                    Cell(6)
+                ),
+                Row(
+                    Cell(4),
+                    Cell(4),
+                    Cell(4)
+                )
+            );
+
+            // act
+            var html = grid.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class=\"container\">" +
+                    "<div class=\"row\">" + 
+                        "<div class=\"col-sm-6\"/>" + 
+                        "<div class=\"col-sm-6\"/>" + 
+                    "</div>" +
+                    "<div class=\"row\">" + 
+                        "<div class=\"col-sm-4\"/>" + 
+                        "<div class=\"col-sm-4\"/>" + 
+                        "<div class=\"col-sm-4\"/>" + 
+                    "</div>" +
+                 "</div>",
+                 html);
+        }
     }
 }
