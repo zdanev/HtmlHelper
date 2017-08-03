@@ -24,22 +24,24 @@ namespace HtmlHelper.Bootstrap
 
     public class Cell : Div
     {
-        public int SmallCols { get; set; }
+        // public int SmallCols { get; set; }
 
-        public int MedCols { get; set; }
+        // public int MedCols { get; set; }
 
-        public int LargeCols { get; set;}
+        // public int LargeCols { get; set; }
+
+        public int Cols { get; set; }
 
         public Cell(params BodyElement[] content) : base(content)
         {
             AddClass("col");            
         }
 
-        public Cell(int smallCols, params BodyElement[] content) : base(content)
+        public Cell(int cols, params BodyElement[] content) : base(content)
         {
-            SmallCols = smallCols;
+            Cols = cols;
 
-            AddClass("col-sm-" + smallCols);            
+            AddClass("col-" + cols);            
         }
     }
 
@@ -65,9 +67,9 @@ namespace HtmlHelper.Bootstrap
             return new Cell(content);
         }
 
-        public static Cell Cell(int smallCols, params BodyElement[] content)
+        public static Cell Cell(int cols, params BodyElement[] content)
         {
-            return new Cell(smallCols, content);
+            return new Cell(cols, content);
         }
     }
 }
