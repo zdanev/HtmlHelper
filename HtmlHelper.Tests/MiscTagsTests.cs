@@ -132,5 +132,38 @@ namespace HtmlHelper.Tests
                 "</ul>",
                 html);
         }
+
+        [Fact]
+        public void TableTest()
+        {
+            // arrange
+            var table = Table(
+                TR(
+                    TD(),
+                    TD()
+                ),
+                TR(
+                    TD(),
+                    TD()
+                )
+            );
+
+            // act
+            var html = table.Render();
+
+            // assert
+            Assert.Equal(
+                "<table>" + 
+                    "<tr>" +
+                        "<td/>" + 
+                        "<td/>" +
+                    "</tr>" +
+                    "<tr>" +
+                        "<td/>" + 
+                        "<td/>" +
+                    "</tr>" +
+                "</table>",
+                html);
+        }
     }
 }
