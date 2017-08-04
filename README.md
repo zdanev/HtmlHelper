@@ -1,2 +1,2 @@
 # HtmlHelper
-set of c# classes to generate html
+A set of c# classes to generate "correct" html, css, bootstap, etc.
