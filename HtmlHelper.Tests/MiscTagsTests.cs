@@ -178,5 +178,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<p>text</p>", html);
         }
+
+        [Fact]
+        public void ButtonWithIdAndClick()
+        {
+            // arrange
+            var button = Button("Click Me").OnClick("buttonClicked();").Id("my-button");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type=\"button\" onclick=\"buttonClicked();\" id=\"my-button\">Click Me</button>", html);
+        }
     }
 }

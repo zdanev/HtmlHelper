@@ -17,6 +17,12 @@ namespace HtmlHelper
             return this;
         }
 
+        public BodyElement Id(string id)
+        {
+            Attr("id", id);
+            return this;
+        }
+
         public BodyElement Class(string @class)
         {
             AddClass(@class);
