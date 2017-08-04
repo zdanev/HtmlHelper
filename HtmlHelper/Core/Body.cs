@@ -17,11 +17,11 @@ namespace HtmlHelper
             return this;
         }
 
-        public BodyElement Id(string id)
-        {
-            Attr("id", id);
-            return this;
-        }
+        // public BodyElement Id(string id)
+        // {
+        //     Attr("id", id);
+        //     return this;
+        // }
 
         public BodyElement Class(string @class)
         {
@@ -48,5 +48,12 @@ namespace HtmlHelper
         {
             return new Body(content);
         }
+
+        // note: this is the pattern to folow...
+        public static T Id<T>(this T bodyElement, string id) where T: BodyElement
+        {
+            bodyElement.Attr("id", id);
+            return bodyElement;
+        }        
     }    
 }

@@ -6,12 +6,6 @@ namespace HtmlHelper
         {
             Attr("type", "button");
         }
-
-        public Button OnClick(string onclick)
-        {
-            Attr("onclick", onclick);
-            return this;
-        }
     }
 
     public static partial class Helpers
@@ -19,6 +13,12 @@ namespace HtmlHelper
         public static Button Button(params BodyElement[] content)
         {
             return new Button(content);
+        }
+
+        public static Button OnClick(this Button button, string onclick)
+        {
+            button.Attr("onclick", onclick);
+            return button;
         }
     }    
 }
