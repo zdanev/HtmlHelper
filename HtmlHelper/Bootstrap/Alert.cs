@@ -29,16 +29,14 @@ namespace HtmlHelper.Bootstrap
     {
         public DismissibleAlert(AlertType type, params BodyElement[] content) : base(type, content)
         {
-                this.Class("alert-dismissible");
-                this.Class("fade");
-                this.Class("show");
+            this.Class("alert-dismissible");
+            this.Class("fade");
+            this.Class("show");
 
-                var closeButton = Button(Span("&times;").Attr("aria-hidden", "true"));
-                closeButton.Class("close");
-                closeButton.Attr("data-dismiss", "alert");
-                closeButton.Attr("aria-label", "Close");
-
-                Content.Insert(0, closeButton);
+            Content.Insert(0, Button(Span("&times;").Attr("aria-hidden", "true"))
+                .Class("close")
+                .Attr("data-dismiss", "alert")
+                .Attr("aria-label", "Close"));
         }
     }
 
