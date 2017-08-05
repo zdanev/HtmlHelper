@@ -31,7 +31,7 @@ namespace HtmlHelper.Tests
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<div class=\"alert alert-success\" role=\"alert\">alert</div>", html);
+            Assert.Equal("<div class='alert alert-success' role='alert'>alert</div>", html);
         }
 
         [Fact]
@@ -49,8 +49,8 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal(
-                "<div class=\"alert alert-info\" role=\"alert\">" + 
-                    "<strong>Heads up!</strong> This <a href=\"#\" class=\"alert-link\">alert needs your attention</a>, but it's not super important." + 
+                "<div class='alert alert-info' role='alert'>" + 
+                    "<strong>Heads up!</strong> This <a href='#' class='alert-link'>alert needs your attention</a>, but it's not super important." + 
                 "</div>", 
                 html);
         }
@@ -68,9 +68,9 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal(
-                "<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\">" + 
-                    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">" +
-                        "<span aria-hidden=\"true\">&times;</span>" +
+                "<div class='alert alert-warning alert-dismissible fade show' role='alert'>" + 
+                    "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>" +
+                        "<span aria-hidden='true'>&times;</span>" +
                     "</button>" +
                     "<strong>Holy guacamole!</strong> You should check in on some of those fields below." +
                 "</div>", 
@@ -87,7 +87,7 @@ namespace HtmlHelper.Tests
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<span class=\"badge badge-default\">99</span>", html);
+            Assert.Equal("<span class='badge badge-default'>99</span>", html);
         }
 
         [Fact]
@@ -100,7 +100,7 @@ namespace HtmlHelper.Tests
             var html = tag.Render();
 
             // assert
-            Assert.Equal("<span class=\"badge badge-default badge-pill\">99</span>", html);
+            Assert.Equal("<span class='badge badge-default badge-pill'>99</span>", html);
         }
 
         [Fact]
@@ -122,16 +122,16 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal(
-                "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inverse\">" + 
-                    "<button type=\"button\" class=\"navbar-toggler navbar-toggler-right\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">" + 
-                        "<span class=\"navbar-toggler-icon\"></span>" + 
+                "<nav class='navbar navbar-toggleable-md navbar-inverse bg-inverse'>" + 
+                    "<button type='button' class='navbar-toggler navbar-toggler-right' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>" + 
+                        "<span class='navbar-toggler-icon'></span>" + 
                     "</button>" + 
-                    "<a href=\"#\" class=\"navbar-brand\">MyApp</a>" + 
-                    "<div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">" + 
-                        "<ul class=\"navbar-nav mr-auto\">" + 
-                            "<li class=\"nav-item active\"><a href=\"#\" class=\"nav-link\">Item 1</a></li>" + 
-                            "<li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Item 2</a></li>" + 
-                            "<li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Item 3</a></li>" + 
+                    "<a href='#' class='navbar-brand'>MyApp</a>" + 
+                    "<div class='collapse navbar-collapse' id='navbarSupportedContent'>" + 
+                        "<ul class='navbar-nav mr-auto'>" + 
+                            "<li class='nav-item active'><a href='#' class='nav-link'>Item 1</a></li>" + 
+                            "<li class='nav-item'><a href='#' class='nav-link'>Item 2</a></li>" + 
+                            "<li class='nav-item'><a href='#' class='nav-link'>Item 3</a></li>" + 
                         "</ul>" + 
                     "</div>" +
                 "</nav>", 
@@ -149,8 +149,8 @@ namespace HtmlHelper.Tests
  
             // assert
             Assert.Equal(
-                "<footer class=\"footer\">" +
-                    "<div class=\"container\">" +
+                "<footer class='footer'>" +
+                    "<div class='container'>" +
                         "<span>footer text</span>" +
                     "</div>" +
                 "</footer>",

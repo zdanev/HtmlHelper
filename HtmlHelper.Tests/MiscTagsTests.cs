@@ -16,7 +16,7 @@ namespace HtmlHelper.Tests
             var html = input.Render();
 
             // assert
-            Assert.Equal("<input type=\"button\">click me</input>", html);
+            Assert.Equal("<input type='button'>click me</input>", html);
         }
         
         [Fact]
@@ -29,7 +29,7 @@ namespace HtmlHelper.Tests
             var html = anchor.Render();
 
             // assert
-            Assert.Equal("<a href=\"http://google.com/\">google</a>", html);            
+            Assert.Equal("<a href='http://google.com/'>google</a>", html);            
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace HtmlHelper.Tests
             var html = script.Render();
 
             // assert
-            Assert.Equal("<script src=\"my-script.js\"></script>", html);            
+            Assert.Equal("<script src='my-script.js'></script>", html);            
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace HtmlHelper.Tests
             var html = link.Render();
 
             // assert
-            Assert.Equal("<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>", html);            
+            Assert.Equal("<link rel='stylesheet' type='text/css' href='stylesheet.css'/>", html);            
         }        
 
         [Fact]
@@ -68,7 +68,7 @@ namespace HtmlHelper.Tests
             var html = meta.Render();
 
             // assert
-            Assert.Equal("<meta charset=\"utf-8\"/>", html);            
+            Assert.Equal("<meta charset='utf-8'/>", html);            
         }    
 
         [Fact]
@@ -94,7 +94,7 @@ namespace HtmlHelper.Tests
             var html = button.Render();
 
             // assert
-            Assert.Equal("<button type=\"button\">Click me!</button>", html);            
+            Assert.Equal("<button type='button'>Click me!</button>", html);            
         }
 
         [Fact]
@@ -189,7 +189,7 @@ namespace HtmlHelper.Tests
             var html = button.Render();
 
             // assert
-            Assert.Equal("<button type=\"button\" id=\"my-button\" onclick=\"buttonClicked();\">Click Me</button>", html);
+            Assert.Equal("<button type='button' id='my-button' onclick='buttonClicked();'>Click Me</button>", html);
         }
     }
 }

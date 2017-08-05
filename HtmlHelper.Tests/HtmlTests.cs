@@ -87,7 +87,7 @@ namespace HtmlHelper.Tests
                     Script("script.js")                    
                 ),
                 Body(
-                    Div().Attr("class", "container") as IBodyElement
+                    Div().Class("container")
                 )
             );
 
@@ -99,11 +99,11 @@ namespace HtmlHelper.Tests
                 "<html>" + 
                     "<head>" + 
                         "<title>my title</title>" + 
-                        "<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheet.css\"/>" + 
-                        "<script src=\"script.js\"></script>" +
+                        "<link rel='stylesheet' type='text/css' href='stylesheet.css'/>" + 
+                        "<script src='script.js'></script>" +
                     "</head>" + 
                     "<body>" + 
-                        "<div class=\"container\"/>" + 
+                        "<div class='container'/>" + 
                     "</body>" + 
                 "</html>", 
                 html);

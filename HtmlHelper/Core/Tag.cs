@@ -39,7 +39,7 @@ namespace HtmlHelper
 
             foreach (var attr in Attributes)
             {
-                sb.Append($" {attr.Name}=\"{attr.Value}\"");
+                sb.Append($" {attr.Name}='{attr.Value}'");
             }
 
             if (Content.Any() || DoNotCollapse)
