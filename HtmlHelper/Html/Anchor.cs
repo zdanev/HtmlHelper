@@ -1,4 +1,4 @@
-using static HtmlHelper.Helpers;
+using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper
 {
@@ -14,7 +14,7 @@ namespace HtmlHelper
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Anchor Anchor(string href, string text)
         {

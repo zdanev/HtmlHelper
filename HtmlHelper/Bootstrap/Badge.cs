@@ -1,4 +1,4 @@
-using static HtmlHelper.Helpers;
+using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper.Bootstrap
 {
@@ -20,7 +20,7 @@ namespace HtmlHelper.Bootstrap
         {
             Type = type;
             this.Class("badge");
-            this.Class("badge-" + type.ToString().ToLower());
+            this.Class("badge-" + type.AsKebab());
         }
     }
 
@@ -32,7 +32,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Badge Badge(BadgeType type, params BodyElement[] content)
         {

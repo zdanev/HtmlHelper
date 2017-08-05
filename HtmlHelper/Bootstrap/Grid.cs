@@ -45,7 +45,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Grid Grid(params Row[] rows)
         {

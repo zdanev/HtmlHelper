@@ -20,11 +20,11 @@ namespace HtmlHelper
             this.Type = type;
             this.Content = content;
 
-            this.Attr("type", type.ToString().ToLower());
+            this.Attr("type", type.AsKebab());
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Input Input(InputType type, string content)
         {

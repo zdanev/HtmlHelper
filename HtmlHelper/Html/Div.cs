@@ -7,7 +7,7 @@ namespace HtmlHelper
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Div Div(params BodyElement[] content)
         {

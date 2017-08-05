@@ -1,8 +1,8 @@
 using System.IO;
 using HtmlHelper.Bootstrap;
 using Xunit;
-using static HtmlHelper.Helpers;
-using static HtmlHelper.Bootstrap.Helpers;
+using static HtmlHelper.FluentApi;
+using static HtmlHelper.Bootstrap.FluentApi;
 
 namespace HtmlHelper.Tests
 {

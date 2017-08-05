@@ -72,7 +72,7 @@ namespace HtmlHelper
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static T Attr<T>(this T tag, string name, string value) where T: Tag
         {

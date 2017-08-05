@@ -1,5 +1,5 @@
 using System.Linq;
-using static HtmlHelper.Helpers;
+using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper.Bootstrap
 {
@@ -51,7 +51,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Modal Modal(params IModalElement[] elements)
         {

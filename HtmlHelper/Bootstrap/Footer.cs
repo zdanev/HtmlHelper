@@ -1,4 +1,4 @@
-using static HtmlHelper.Bootstrap.Helpers;
+using static HtmlHelper.Bootstrap.FluentApi;
 
 namespace HtmlHelper.Bootstrap
 {
@@ -10,7 +10,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Footer Footer(params BodyElement[] content)
         {

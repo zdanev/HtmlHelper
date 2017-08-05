@@ -23,7 +23,7 @@ namespace HtmlHelper
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Body Body(params IBodyElement[] content)
         {

@@ -1,4 +1,4 @@
-using static HtmlHelper.Helpers;
+using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper
 {
@@ -11,7 +11,7 @@ namespace HtmlHelper
             Value = title; 
         }
     }
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Title Title(string title)
         {

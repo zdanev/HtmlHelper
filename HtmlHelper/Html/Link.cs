@@ -25,13 +25,13 @@ namespace HtmlHelper
             Type = type;
             Href = href;
 
-            this.Attr("rel", rel.ToString().ToLower().Replace("_", "/"));
-            this.Attr("type", type.ToString().ToLower().Replace("_", "/"));
+            this.Attr("rel", rel.AsPath());
+            this.Attr("type", type.AsPath());
             this.Attr("href", href);
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Link Link(LinkRel rel, LinkType type, string href) 
         {

@@ -7,7 +7,7 @@ namespace HtmlHelper
         }        
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {        public static Span Span(params BodyElement[] content)
         {
             return new Span(content);

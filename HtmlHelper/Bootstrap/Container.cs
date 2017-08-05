@@ -16,7 +16,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public static partial class Helpers
+    public static partial class FluentApi
     {
         public static Container Container(params BodyElement[] content)
         {
