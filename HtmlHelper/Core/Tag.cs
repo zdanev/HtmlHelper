@@ -21,7 +21,6 @@ namespace HtmlHelper
         {
             Attributes = new List<HtmlAttribute>();
             Content = new List<IHtmlElement>();
-            DoNotCollapse = false;
         }
 
         public Tag(string name, params IHtmlElement[] content) : this()
@@ -71,32 +70,38 @@ namespace HtmlHelper
 
             return returnResult ? sb.ToString() : null;
         }
+    }
 
-        public Tag Attr(string name, string value)
+    public static partial class Helpers
+    {
+        public static T Attr<T>(this T tag, string name, string value) where T: Tag
         {
-            var attr = Attributes.SingleOrDefault(x => x.Name == name);
+            var attr = tag.Attributes.SingleOrDefault(x => x.Name == name);
             if (attr == null)
             {
-                Attributes.Add(new HtmlAttribute(name, value));
+                tag.Attributes.Add(new HtmlAttribute(name, value));
             }
             else
             {
                 attr.Value = value;
             }
-            return this;
+
+            return tag;
         }
 
-        public void AddClass(string @class)
+        public static T Class<T>(this T tag, string @class) where T: Tag
         {
-            var classAttr = Attributes.SingleOrDefault(x => x.Name == "class");
+            var classAttr = tag.Attributes.SingleOrDefault(x => x.Name == "class");
             if (classAttr == null)
             {
-                Attr("class", @class);
+                tag.Attr("class", @class);
             }
             else
             {
-                Attr("class", classAttr.Value + " " + @class);
+                tag.Attr("class", classAttr.Value + " " + @class);
             }
+
+            return tag;
         }      
     }
 }

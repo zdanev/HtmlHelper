@@ -4,7 +4,7 @@ namespace HtmlHelper
     {
         public Button(params BodyElement[] content) : base("button", content)
         {
-            Attr("type", "button");
+            this.Attr("type", "button");
         }
     }
 

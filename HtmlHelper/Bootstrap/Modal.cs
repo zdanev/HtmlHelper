@@ -12,8 +12,8 @@ namespace HtmlHelper.Bootstrap
         public Modal(params IModalElement[] elements) 
             : base(Div(elements.Cast<BodyElement>().ToArray()).Class("modal-dialog").Attr("role", "document"))
         {
-            AddClass("modal");
-            AddClass("fade");            
+            this.Class("modal");
+            this.Class("fade");            
         }
     }
 
@@ -31,7 +31,7 @@ namespace HtmlHelper.Bootstrap
     {
         public ModalHeader(params BodyElement[] content)
         {
-            AddClass("modal-header");
+            this.Class("modal-header");
         }
     }
 
@@ -39,7 +39,7 @@ namespace HtmlHelper.Bootstrap
     {
         public ModalBody(params BodyElement[] content)
         {
-            AddClass("modal-body");
+            this.Class("modal-body");
         }
     }
 
@@ -47,7 +47,7 @@ namespace HtmlHelper.Bootstrap
     {
         public ModalFooter(params BodyElement[] content)
         {
-            AddClass("modal-footer");
+            this.Class("modal-footer");
         }
     }
 

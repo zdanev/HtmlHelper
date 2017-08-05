@@ -4,7 +4,7 @@ namespace HtmlHelper.Bootstrap
     {
         public Container(params BodyElement[] content) : base(content)
         {
-            AddClass("container");
+            this.Class("container");
         }
     }
 
@@ -12,7 +12,7 @@ namespace HtmlHelper.Bootstrap
     {
         public FluidContainer(params BodyElement[] content) : base(content)
         {
-            AddClass("container-fluid");
+            this.Class("container-fluid");
         }
     }
 

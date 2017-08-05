@@ -19,8 +19,8 @@ namespace HtmlHelper.Bootstrap
         public Badge(BadgeType type, params BodyElement[] content) : base(content)
         {
             Type = type;
-            AddClass("badge");
-            AddClass("badge-" + type.ToString().ToLower());
+            this.Class("badge");
+            this.Class("badge-" + type.ToString().ToLower());
         }
     }
 
@@ -28,7 +28,7 @@ namespace HtmlHelper.Bootstrap
     {
         public PillBadge(BadgeType type, params BodyElement[] content) : base(type, content)
         {
-            AddClass("badge-pill");
+            this.Class("badge-pill");
         }
     }
 

@@ -18,7 +18,7 @@ namespace HtmlHelper.Bootstrap
     {
         public Row(params Cell[] cells) : base(cells)
         {
-            AddClass("row");
+            this.Class("row");
         }
     }
 
@@ -34,14 +34,14 @@ namespace HtmlHelper.Bootstrap
 
         public Cell(params BodyElement[] content) : base(content)
         {
-            AddClass("col");            
+            this.Class("col");            
         }
 
         public Cell(int cols, params BodyElement[] content) : base(content)
         {
             Cols = cols;
 
-            AddClass("col-" + cols);            
+            this.Class("col-" + cols);            
         }
     }
 

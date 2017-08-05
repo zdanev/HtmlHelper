@@ -6,7 +6,7 @@ namespace HtmlHelper.Bootstrap
     {
         public Footer(params BodyElement[] content) : base("footer", Container(content))
         {
-            AddClass("footer");
+            this.Class("footer");
         }
     }
 

@@ -11,12 +11,12 @@ namespace HtmlHelper.Bootstrap
     {
         public NavBar(params INavBarElement[] content) : base("nav", content)
         {
-            AddClass("navbar"); 
-            AddClass("navbar-toggleable-md"); 
-            // AddClass("navbar-light"); 
-            // AddClass("bg-faded");   
-            AddClass("navbar-inverse");         
-            AddClass("bg-inverse");            
+            this.Class("navbar"); 
+            this.Class("navbar-toggleable-md"); 
+            // this.AddClass("navbar-light"); 
+            // this.AddClass("bg-faded");   
+            this.Class("navbar-inverse");         
+            this.Class("bg-inverse");            
         }
     }
 
@@ -24,14 +24,14 @@ namespace HtmlHelper.Bootstrap
     {
         public NavBarToggler() : base(Span("").Class("navbar-toggler-icon"))
         {
-            AddClass("navbar-toggler");
-            AddClass("navbar-toggler-right");
+            this.Class("navbar-toggler");
+            this.Class("navbar-toggler-right");
 
-            Attr("data-toggle", "collapse");
-            Attr("data-target", "#navbarSupportedContent");
-            Attr("aria-controls", "navbarSupportedContent");
-            Attr("aria-expanded", "false");
-            Attr("aria-label", "Toggle navigation");
+            this.Attr("data-toggle", "collapse");
+            this.Attr("data-target", "#navbarSupportedContent");
+            this.Attr("aria-controls", "navbarSupportedContent");
+            this.Attr("aria-expanded", "false");
+            this.Attr("aria-label", "Toggle navigation");
         }
     }
 
@@ -39,8 +39,8 @@ namespace HtmlHelper.Bootstrap
     {
         public NavBarBrand(string title) : base(title)
         {
-            AddClass("navbar-brand");
-            AddClass("mb-0");
+            this.Class("navbar-brand");
+            this.Class("mb-0");
         }
     }
 
@@ -48,7 +48,7 @@ namespace HtmlHelper.Bootstrap
     {
         public NavBarLinkBrand(string title, string href) : base(href, title)
         {
-            AddClass("navbar-brand");
+            this.Class("navbar-brand");
         }
     }
 
@@ -56,9 +56,9 @@ namespace HtmlHelper.Bootstrap
     {
         public NavBarItems(params NavBarItem[] items) : base(UL(items).Class("navbar-nav").Class("mr-auto"))
         {
-            AddClass("collapse");
-            AddClass("navbar-collapse");
-            Attr("id", "navbarSupportedContent"); // todo: ...?!?            
+            this.Class("collapse");
+            this.Class("navbar-collapse");
+            this.Id("navbarSupportedContent"); // todo: ...?!?            
         }
     }
 
@@ -67,11 +67,11 @@ namespace HtmlHelper.Bootstrap
         public NavBarItem(string title, string href, bool isActive = false)
             : base(Anchor(href, title).Class("nav-link"))
         {
-            AddClass("nav-item");            
+            this.Class("nav-item");            
 
             if (isActive)
             {
-                AddClass("active");
+                this.Class("active");
             }
         }
     }
