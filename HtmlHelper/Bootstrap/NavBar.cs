@@ -20,7 +20,7 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
-    public class NavBarToggler : Button, INavBarElement
+    public class NavBarToggler : HtmlHelper.Button, INavBarElement
     {
         public NavBarToggler() : base(Span("").Class("navbar-toggler-icon"))
         {

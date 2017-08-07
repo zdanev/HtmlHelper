@@ -155,6 +155,19 @@ namespace HtmlHelper.Tests
                     "</div>" +
                 "</footer>",
                 html);
-        }        
+        }   
+
+        [Fact]
+        public void SuccessButtonTest()
+        {
+            // arrange
+            var button = Button(ButtonType.Success, "Success!");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' class='btn btn-success'>Success!</button>", html);
+        }     
     }
 }
