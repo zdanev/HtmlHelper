@@ -169,5 +169,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<button type='button' class='btn btn-success'>Success!</button>", html);
         }     
+
+        [Fact]
+        public void OutlineButtonTest()
+        {
+            // arrange
+            var button = OutlineButton(ButtonType.Primary, "Click me!");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' class='btn btn-outline-primary'>Click me!</button>", html);
+        }     
     }
 }
