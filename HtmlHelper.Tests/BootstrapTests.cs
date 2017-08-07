@@ -171,6 +171,19 @@ namespace HtmlHelper.Tests
         }     
 
         [Fact]
+        public void LargeDangerButtonTest()
+        {
+            // arrange
+            var button = Button(ButtonType.Danger, ButtonSize.Large, "Danger!");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' class='btn btn-danger btn-lg'>Danger!</button>", html);
+        }     
+
+        [Fact]
         public void OutlineButtonTest()
         {
             // arrange
@@ -181,6 +194,19 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<button type='button' class='btn btn-outline-primary'>Click me!</button>", html);
+        }
+
+        [Fact]
+        public void SmallOutlineButtonTest()
+        {
+            // arrange
+            var button = OutlineButton(ButtonType.Info, ButtonSize.Small, "Click for more info!");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' class='btn btn-outline-info btn-sm'>Click for more info!</button>", html);
         }     
     }
 }
