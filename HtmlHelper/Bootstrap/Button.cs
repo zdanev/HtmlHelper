@@ -43,6 +43,19 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
+    public class BlockButton : Button
+    {
+        public BlockButton(ButtonType type, params BodyElement[] content) : base (type, content)
+        {
+            this.Class("btn-block");            
+        }
+
+        public BlockButton(ButtonType type, ButtonSize size, params BodyElement[] content) : base (type, size, content)
+        {
+            this.Class("btn-block");            
+        }
+    }
+
     public class OutlineButton : HtmlHelper.Button
     {
         public OutlineButton(ButtonType type, params BodyElement[] content) : base(content)
@@ -78,6 +91,16 @@ namespace HtmlHelper.Bootstrap
         public static Button Button(ButtonType type, ButtonSize size, params BodyElement[] content)
         {
             return new Button(type, size, content);
+        } 
+               
+        public static BlockButton BlockButton(ButtonType type, ButtonSize size, params BodyElement[] content)
+        {
+            return new BlockButton(type, size, content);
+        } 
+               
+        public static BlockButton BlockButton(ButtonType type, params BodyElement[] content)
+        {
+            return new BlockButton(type, content);
         } 
                
         public static OutlineButton OutlineButton(ButtonType type, params BodyElement[] content)

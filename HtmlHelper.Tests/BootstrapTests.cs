@@ -208,5 +208,18 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<button type='button' class='btn btn-outline-info btn-sm'>Click for more info!</button>", html);
         }     
+
+        [Fact]
+        public void BlockButtonTest()
+        {
+            // arrange
+            var button = BlockButton(ButtonType.Default, "Block Level Button");
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' class='btn btn-default btn-block'>Block Level Button</button>", html);
+        }     
     }
 }
