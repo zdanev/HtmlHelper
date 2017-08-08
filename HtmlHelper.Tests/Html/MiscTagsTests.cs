@@ -177,5 +177,31 @@ namespace HtmlHelper.Tests
             // assert
             Assert.Equal("<button type='button' id='my-button' onclick='buttonClicked();'>Click Me</button>", html);
         }
+
+        [Fact]
+        public void BreakTest()
+        {
+            // arrange
+            var br = BR();
+
+            // act 
+            var html = br.Render();
+
+            // assert
+            Assert.Equal(html, "<br/>");
+        }
+
+        [Fact]
+        public void LineTest()
+        {
+            // arrange
+            var hr = HR();
+
+            // act 
+            var html = hr.Render();
+
+            // assert
+            Assert.Equal(html, "<hr/>");
+        }
     }
 }
