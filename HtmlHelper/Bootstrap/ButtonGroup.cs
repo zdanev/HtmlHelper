@@ -9,11 +9,25 @@ namespace HtmlHelper.Bootstrap
         }
     }
 
+    public class ButtonToolbar : Div
+    {
+        public ButtonToolbar(params ButtonGroup[] content) : base(content)
+        {
+            this.Class("btn-toolbar");
+            this.Attr("role", "toolbar");
+        }
+    }
+
     public static partial class FluentApi
     {
         public static ButtonGroup ButtonGroup(params Button[] content)
         {
             return new ButtonGroup(content);
+        }
+
+        public static ButtonToolbar ButtonToolbar(params ButtonGroup[] content)
+        {
+            return new ButtonToolbar(content);
         }
     }
 }

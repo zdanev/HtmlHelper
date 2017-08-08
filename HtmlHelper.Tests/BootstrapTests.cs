@@ -242,6 +242,47 @@ namespace HtmlHelper.Tests
                     "<button type='button' class='btn btn-default'>Button 3</button>" +
                 "</div>",
                 html);
+        }
+
+        [Fact]
+        public void ButtonToolbarTest()
+        {
+            // arrange
+            var toolbar = ButtonToolbar(
+                ButtonGroup(
+                    Button(ButtonType.Default, "1"),
+                    Button(ButtonType.Default, "2"),
+                    Button(ButtonType.Default, "3")
+                ),
+                ButtonGroup(
+                    Button(ButtonType.Default, "4"),
+                    Button(ButtonType.Default, "5")
+                ),
+                ButtonGroup(
+                    Button(ButtonType.Default, "6")
+                )
+            );
+
+            // act
+            var html = toolbar.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class='btn-toolbar' role='toolbar'>" + 
+                    "<div class='btn-group' role='group'>" + 
+                        "<button type='button' class='btn btn-default'>1</button>" +
+                        "<button type='button' class='btn btn-default'>2</button>" +
+                        "<button type='button' class='btn btn-default'>3</button>" +
+                    "</div>" +
+                    "<div class='btn-group' role='group'>" + 
+                        "<button type='button' class='btn btn-default'>4</button>" +
+                        "<button type='button' class='btn btn-default'>5</button>" +
+                    "</div>" +
+                    "<div class='btn-group' role='group'>" + 
+                        "<button type='button' class='btn btn-default'>6</button>" +
+                    "</div>" +
+                "</div>",
+                html);
         }            
     } 
 }
