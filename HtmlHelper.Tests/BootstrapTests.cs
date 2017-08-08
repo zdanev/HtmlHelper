@@ -220,6 +220,28 @@ namespace HtmlHelper.Tests
 
             // assert
             Assert.Equal("<button type='button' class='btn btn-default btn-block'>Block Level Button</button>", html);
-        }     
-    }
+        }    
+
+        [Fact]
+        public void ButtonGroupTest()
+        {
+            // arrange
+            var group = ButtonGroup(
+                Button(ButtonType.Default, "Button 1"),
+                Button(ButtonType.Default, "Button 2"),
+                Button(ButtonType.Default, "Button 3"));
+
+            // act
+            var html = group.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class='btn-group' role='group'>" + 
+                    "<button type='button' class='btn btn-default'>Button 1</button>" +
+                    "<button type='button' class='btn btn-default'>Button 2</button>" +
+                    "<button type='button' class='btn btn-default'>Button 3</button>" +
+                "</div>",
+                html);
+        }            
+    } 
 }
