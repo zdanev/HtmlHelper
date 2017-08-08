@@ -33,4 +33,12 @@ namespace HtmlHelper
             return new Literal(value);
         }
     }
+
+    public static partial class FluentApi
+    {
+        public static Literal Literal(string content)
+        {
+            return new Literal(content);
+        }
+    } 
 }

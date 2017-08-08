@@ -5,19 +5,6 @@ namespace HtmlHelper.Tests
 {
     public class MiscTagTests
     {
-         [Fact]
-        public void InputTest()
-        {
-            // arrange 
-            var input = Input(InputType.Button, "click me");
-
-            // act
-            var html = input.Render();
-
-            // assert
-            Assert.Equal("<input type='button'>click me</input>", html);
-        }
-        
         [Fact]
         public void AnchorTest()
         {
