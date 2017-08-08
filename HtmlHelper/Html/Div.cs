@@ -9,9 +9,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Div Div(params BodyElement[] content)
-        {
-            return new Div(content);
-        }
+        public static Div Div(params BodyElement[] content) => new Div(content);
     }
 }

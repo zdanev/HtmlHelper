@@ -15,9 +15,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Script Script(string src)
-        {
-            return new Script(src);
-        }
+        public static Script Script(string src) => new Script(src);
     }    
 }

@@ -23,19 +23,10 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static UnorderedList UL(params ListItem[] items)
-        {
-            return new UnorderedList(items);
-        }
+        public static UnorderedList UL(params ListItem[] items) => new UnorderedList(items);
 
-        public static OrderedList OL(params ListItem[] items)
-        {
-            return new OrderedList(items);
-        }
+        public static OrderedList OL(params ListItem[] items) => new OrderedList(items);
 
-        public static ListItem LI(params BodyElement[] content)
-        {
-            return new ListItem(content);
-        }
+        public static ListItem LI(params BodyElement[] content) => new ListItem(content);
     }
 }

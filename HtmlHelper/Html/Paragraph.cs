@@ -9,9 +9,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Paragrapth P(params BodyElement[] content)
-        {
-            return new Paragrapth(content);
-        }
+        public static Paragrapth P(params BodyElement[] content) => new Paragrapth(content);
     }
 }

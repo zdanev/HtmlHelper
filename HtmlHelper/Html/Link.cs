@@ -33,9 +33,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Link Link(LinkRel rel, LinkType type, string href) 
-        {
-            return new Link(rel, type, href);
-        }
+        public static Link Link(LinkRel rel, LinkType type, string href) => new Link(rel, type, href);
     }    
 }

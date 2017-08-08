@@ -24,19 +24,10 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Select Select(params Option[] content)
-        {
-            return new Select(content);
-        }
+        public static Select Select(params Option[] content) => new Select(content);
 
-        public static Option Option(string text)
-        {
-            return new Option(text);
-        }
+        public static Option Option(string text) => new Option(text);
 
-        public static Option Option(string text, string value)
-        {
-            return new Option(text, value);
-        }
+        public static Option Option(string text, string value) => new Option(text, value);
     }
 }

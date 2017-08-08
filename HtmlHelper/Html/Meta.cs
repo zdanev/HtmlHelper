@@ -10,9 +10,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Meta Meta(string name, string value)
-        {
-            return new Meta(name, value);
-        }
+        public static Meta Meta(string name, string value) => new Meta(name, value);
     }    
 }

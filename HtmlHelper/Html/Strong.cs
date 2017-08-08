@@ -11,9 +11,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Strong Strong(string content)
-        {
-            return new Strong(content);
-        }
+        public static Strong Strong(string content) => new Strong(content);
     }    
 }

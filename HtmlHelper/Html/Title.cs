@@ -13,10 +13,6 @@ namespace HtmlHelper
     }
     public static partial class FluentApi
     {
-        public static Title Title(string title)
-        {
-            return new Title(title);
-        
-        }
+        public static Title Title(string title) => new Title(title);
     }
 }

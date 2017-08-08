@@ -10,15 +10,8 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Button Button(params BodyElement[] content)
-        {
-            return new Button(content);
-        }
+        public static Button Button(params BodyElement[] content) => new Button(content);
 
-        public static Button OnClick(this Button button, string onclick)
-        {
-            button.Attr("onclick", onclick);
-            return button;
-        }
+        public static Button OnClick(this Button button, string onclick) => button.Attr("onclick", onclick);
     }    
 }

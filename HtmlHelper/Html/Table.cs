@@ -23,19 +23,10 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Table Table(params TableRow[] rows)
-        {
-            return new Table(rows);
-        }
+        public static Table Table(params TableRow[] rows) => new Table(rows);
 
-        public static TableRow TR(params TableCell[] cells)
-        {
-            return new TableRow(cells);
-        }
+        public static TableRow TR(params TableCell[] cells) => new TableRow(cells);
 
-        public static TableCell TD(params BodyElement[] content)
-        {
-            return new TableCell(content);
-        }
+        public static TableCell TD(params BodyElement[] content) => new TableCell(content);
     }
 }

@@ -54,34 +54,16 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static H1 H1(params BodyElement[] content)
-        {
-            return new H1(content);
-        }
+        public static H1 H1(params BodyElement[] content) =>  new H1(content);
 
-        public static H2 H2(params BodyElement[] content)
-        {
-            return new H2(content);
-        }
+        public static H2 H2(params BodyElement[] content) => new H2(content);
 
-        public static H3 H3(params BodyElement[] content)
-        {
-            return new H3(content);
-        }
+        public static H3 H3(params BodyElement[] content) => new H3(content);
 
-        public static H4 H4(params BodyElement[] content)
-        {
-            return new H4(content);
-        }
+        public static H4 H4(params BodyElement[] content) => new H4(content);
 
-        public static H5 H5(params BodyElement[] content)
-        {
-            return new H5(content);
-        }
+        public static H5 H5(params BodyElement[] content) => new H5(content);
 
-        public static H6 H6(params BodyElement[] content)
-        {
-            return new H6(content);
-        }
+        public static H6 H6(params BodyElement[] content) => new H6(content);
     }
 }
