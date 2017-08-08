@@ -18,7 +18,7 @@ namespace HtmlHelper.Bootstrap
         Small
     }
 
-    public class Button : HtmlHelper.Button
+    public class Button : HtmlHelper.Button, IDropdownElement
     {
         public Button(ButtonType type, params BodyElement[] content) : base(content)
         {
