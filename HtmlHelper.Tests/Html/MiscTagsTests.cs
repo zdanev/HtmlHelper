@@ -6,7 +6,7 @@ namespace HtmlHelper.Tests
     public class MiscTagTests
     {
          [Fact]
-        public void InputTypeTest()
+        public void InputTest()
         {
             // arrange 
             var input = Input(InputType.Button, "click me");
