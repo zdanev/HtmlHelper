@@ -11,6 +11,8 @@ namespace HtmlHelper.Bootstrap
 
     public class ButtonToolbar : Div
     {
+        // TODO: toolbar can also accept input-group
+
         public ButtonToolbar(params ButtonGroup[] content) : base(content)
         {
             this.Class("btn-toolbar");
