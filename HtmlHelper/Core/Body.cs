@@ -27,10 +27,6 @@ namespace HtmlHelper
     {
         public static Body Body(params IBodyElement[] content) => new Body(content);
 
-        public static T Id<T>(this T bodyElement, string id) where T: BodyElement
-        {
-            bodyElement.Attr("id", id);
-            return bodyElement;
-        }        
+        public static T Id<T>(this T element, string id) where T: BodyElement => element.Attr("id", id);
     }    
 }

@@ -11,6 +11,7 @@ namespace HtmlHelper
             Value = title; 
         }
     }
+    
     public static partial class FluentApi
     {
         public static Title Title(string title) => new Title(title);
