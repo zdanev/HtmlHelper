@@ -41,5 +41,18 @@ namespace HtmlHelper.Tests
                 html
             );  
         }
+
+        [Fact]
+        public void LabelForTest()
+        {
+            // arrange 
+            var label = LabelFor("input1", "Input 1");
+
+            // act
+            var html = label.Render();
+
+            // assert
+            Assert.Equal("<label for='input1'>Input 1</label>", html);
+        }
     }
 }
