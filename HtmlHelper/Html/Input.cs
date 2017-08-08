@@ -13,12 +13,9 @@ namespace HtmlHelper
     {
         public InputType Type { get; }
 
-        public new string Content { get; }
-
-        public Input(InputType type, string content) : base("input", new Literal(content))
+        public Input(InputType type, params BodyElement[] content) : base("input", content)
         {
             this.Type = type;
-            this.Content = content;
 
             this.Attr("type", type.AsKebab());
         }
@@ -26,7 +23,7 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Input Input(InputType type, string content)
+        public static Input Input(InputType type, params BodyElement[] content)
         {
             return new Input(type, content);
         }

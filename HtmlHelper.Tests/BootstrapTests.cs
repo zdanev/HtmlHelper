@@ -283,6 +283,41 @@ namespace HtmlHelper.Tests
                     "</div>" +
                 "</div>",
                 html);
+        }
+
+        [Fact]
+        public void ButtonToolbarWithInputGroup()
+        {
+            // arrange
+            var toolbar = ButtonToolbar(
+                ButtonGroup(
+                    Button(ButtonType.Default, "1"),
+                    Button(ButtonType.Default, "2"),
+                    Button(ButtonType.Default, "3")
+                ),
+                InputGroup(
+                    InputGroupAddOn("@"),
+                    FormControl(InputType.Text)
+                )
+            );
+
+            // act
+            var html = toolbar.Render();
+
+            // assert
+            Assert.Equal(
+                "<div class='btn-toolbar' role='toolbar'>" + 
+                    "<div class='btn-group' role='group'>" + 
+                        "<button type='button' class='btn btn-default'>1</button>" +
+                        "<button type='button' class='btn btn-default'>2</button>" +
+                        "<button type='button' class='btn btn-default'>3</button>" +
+                    "</div>" +
+                    "<div class='input-group'>" +
+                        "<span class='input-group-addon'>@</span>" +
+                        "<input type='text' class='form-control'/>" +
+                    "</div>" +
+                "</div>",
+                html);
         }            
     } 
 }

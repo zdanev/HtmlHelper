@@ -1,6 +1,10 @@
 namespace HtmlHelper.Bootstrap
 {
-    public class ButtonGroup : Div
+    public interface IButtonToolbarElement : IBodyElement
+    {
+    }
+
+    public class ButtonGroup : Div, IButtonToolbarElement
     {
         public ButtonGroup(params Button[] content) : base(content)
         {
@@ -11,9 +15,7 @@ namespace HtmlHelper.Bootstrap
 
     public class ButtonToolbar : Div
     {
-        // TODO: toolbar can also accept input-group
-
-        public ButtonToolbar(params ButtonGroup[] content) : base(content)
+        public ButtonToolbar(params IButtonToolbarElement[] content) : base(content)
         {
             this.Class("btn-toolbar");
             this.Attr("role", "toolbar");
@@ -27,7 +29,7 @@ namespace HtmlHelper.Bootstrap
             return new ButtonGroup(content);
         }
 
-        public static ButtonToolbar ButtonToolbar(params ButtonGroup[] content)
+        public static ButtonToolbar ButtonToolbar(params IButtonToolbarElement[] content)
         {
             return new ButtonToolbar(content);
         }
