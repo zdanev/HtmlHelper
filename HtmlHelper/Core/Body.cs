@@ -25,10 +25,7 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Body Body(params IBodyElement[] content)
-        {
-            return new Body(content);
-        }
+        public static Body Body(params IBodyElement[] content) => new Body(content);
 
         public static T Id<T>(this T bodyElement, string id) where T: BodyElement
         {

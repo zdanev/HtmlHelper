@@ -9,7 +9,7 @@ namespace HtmlHelper
         // todo...
     }
 
-    public class Input : Tag, IBodyElement
+    public class Input : BodyElement
     {
         public InputType Type { get; }
 
@@ -23,9 +23,6 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Input Input(InputType type, params BodyElement[] content)
-        {
-            return new Input(type, content);
-        }
+        public static Input Input(InputType type, params BodyElement[] content) => new Input(type, content);
     }    
 }
