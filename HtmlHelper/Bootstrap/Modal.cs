@@ -9,11 +9,17 @@ namespace HtmlHelper.Bootstrap
 
     public class Modal : Div
     {
-        public Modal(params IModalElement[] elements) 
-            : base(Div(elements.Cast<BodyElement>().ToArray()).Class("modal-dialog").Attr("role", "document"))
+        public Modal(params IModalElement[] elements) : base()
         {
             this.Class("modal");
-            this.Class("fade");            
+            this.Class("fade"); 
+
+            var modalDialog = Div().Class("modal-dialog").Attr("role", "document");
+            var modalContent = Div().Class("modal-content");    
+
+            this.Content.Add(modalDialog);
+            modalDialog.Content.Add(modalContent);
+            modalContent.Content.AddRange(elements); 
         }
     }
 
@@ -27,50 +33,52 @@ namespace HtmlHelper.Bootstrap
 
     }
 
-    public class ModalHeader : Div
+    public interface IModalHeaderElement : IBodyElement
     {
-        public ModalHeader(params BodyElement[] content)
+    }
+
+    public class ModalHeader : Div, IModalElement
+    {
+        public ModalHeader(params IModalHeaderElement[] content) : base(content)
         {
             this.Class("modal-header");
         }
     }
 
-    public class ModalBody : Div
+    public class ModalBody : Div, IModalElement
     {
-        public ModalBody(params BodyElement[] content)
+        public ModalBody(params BodyElement[] content) : base(content)
         {
             this.Class("modal-body");
         }
     }
 
-    public class ModalFooter : Div
+    public class ModalFooter : Div, IModalElement
     {
-        public ModalFooter(params BodyElement[] content)
+        public ModalFooter(params BodyElement[] content) : base(content)
         {
             this.Class("modal-footer");
         }
     }
 
+    public class ModalTitle : H5, IModalHeaderElement
+    {
+        public ModalTitle(params BodyElement[] content) : base(content)
+        {
+            this.Class("modal-title");
+        }
+    }
+
     public static partial class FluentApi
     {
-        public static Modal Modal(params IModalElement[] elements)
-        {
-            return new Modal(elements);
-        }
+        public static Modal Modal(params IModalElement[] elements) => new Modal(elements);
 
-        public static ModalHeader ModalHeader(params BodyElement[] content)
-        {
-            return new ModalHeader(content);
-        }
+        public static ModalHeader ModalHeader(params IModalHeaderElement[] content) => new ModalHeader(content);
 
-        public static ModalBody ModalBody(params BodyElement[] content)
-        {
-            return new ModalBody(content);
-        }
+        public static ModalBody ModalBody(params BodyElement[] content) => new ModalBody(content);
 
-        public static ModalFooter ModalFooter(params BodyElement[] content)
-        {
-            return new ModalFooter(content);
-        }
+        public static ModalFooter ModalFooter(params BodyElement[] content) => new ModalFooter(content);
+        
+        public static ModalTitle ModalTitle(params BodyElement[] content) => new ModalTitle(content);
     }
 }
