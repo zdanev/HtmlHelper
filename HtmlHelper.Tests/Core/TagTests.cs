@@ -1,5 +1,4 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper.Tests
