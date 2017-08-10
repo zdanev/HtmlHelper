@@ -20,7 +20,10 @@ namespace HtmlHelper.Bootstrap
                     Meta("charset", "utf-8"),
                     Meta("name", "viewport").Attr("content", "width=device-width, initial-scale=1, shrink-to-fit=no"),
                     Link(LinkRel.Stylesheet, LinkType.Text_Css, cssUrl).Attr("integrity", cssHash).Attr("crossorigin", "anonymous"),
-                    Title(title)
+                    Title(title),
+                    Style("html { position: relative; min-height: 100%; }" + // todo: sticky footer style
+                        "body { margin-bottom: 60px; }" + 
+                        ".footer { position: absolute; bottom: 0; width: 100%; height: 60px; line-height: 60px; background-color: #f5f5f5; }")
                 ), 
                 Body(content)))
         {
