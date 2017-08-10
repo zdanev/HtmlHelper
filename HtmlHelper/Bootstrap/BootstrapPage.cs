@@ -1,3 +1,4 @@
+using System.Linq;
 using static HtmlHelper.FluentApi;
 
 namespace HtmlHelper.Bootstrap
@@ -19,14 +20,13 @@ namespace HtmlHelper.Bootstrap
                     Meta("charset", "utf-8"),
                     Meta("name", "viewport").Attr("content", "width=device-width, initial-scale=1, shrink-to-fit=no"),
                     Link(LinkRel.Stylesheet, LinkType.Text_Css, cssUrl).Attr("integrity", cssHash).Attr("crossorigin", "anonymous"),
-                    // todo: move scripts after body    
-                    Script(jqueryUrl).Attr("integrity", jqueryHash).Attr("crossorigin", "anonymous"),
-                    Script(tetherUrl).Attr("integrity", tetherHash).Attr("crossorigin", "anonymous"),
-                    Script(bootstrapUrl).Attr("integrity", bootstrapHash).Attr("crossorigin", "anonymous"),
                     Title(title)
                 ), 
                 Body(content)))
         {
+            Content.Add(ExtScript(jqueryUrl).Attr("integrity", jqueryHash).Attr("crossorigin", "anonymous"));
+            Content.Add(ExtScript(tetherUrl).Attr("integrity", tetherHash).Attr("crossorigin", "anonymous"));
+            Content.Add(ExtScript(bootstrapUrl).Attr("integrity", bootstrapHash).Attr("crossorigin", "anonymous"));
         }
     }
 

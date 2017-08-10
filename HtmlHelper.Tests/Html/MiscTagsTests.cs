@@ -22,7 +22,7 @@ namespace HtmlHelper.Tests
         public void ScriptSrcTest()
         {
             // arrange
-            var script = Script("my-script.js");
+            var script = ExtScript("my-script.js");
 
             // act
             var html = script.Render();

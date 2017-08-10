@@ -1,10 +1,21 @@
 namespace HtmlHelper
 {
-    public class Script : HeadElement
+    public interface IScriptElement : IHtmlElement
+    {        
+    }
+
+    public class Script : Tag, IHeadElement, IBodyElement
+    {
+        public Script(params IScriptElement[] content) : base("script", content)
+        {            
+        }
+    }
+
+    public class ExtScript : Script
     {
         public string Src { get; }
 
-        public Script(string src) : base("script")
+        public ExtScript(string src)
         {
             DoNotCollapse = true;
             Src = src;
@@ -15,6 +26,8 @@ namespace HtmlHelper
 
     public static partial class FluentApi
     {
-        public static Script Script(string src) => new Script(src);
+        public static ExtScript ExtScript(string src) => new ExtScript(src);
+
+        public static Script Script(params IScriptElement[] content) => new Script(content);
     }    
 }

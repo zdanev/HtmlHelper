@@ -83,7 +83,7 @@ namespace HtmlHelper.Tests
                 Head(
                     Title("my title"),
                     Link(LinkRel.Stylesheet, LinkType.Text_Css, "stylesheet.css"),
-                    Script("script.js")                    
+                    ExtScript("script.js")                    
                 ),
                 Body(
                     Div().Class("container")
