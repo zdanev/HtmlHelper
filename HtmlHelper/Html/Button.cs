@@ -12,6 +12,6 @@ namespace HtmlHelper
     {
         public static Button Button(params BodyElement[] content) => new Button(content);
 
-        public static Button OnClick(this Button button, string onclick) => button.Attr("onclick", onclick);
+        public static Button OnClick(this Button button, ScriptElement onclick) => button.Attr("onclick", onclick.ToString());
     }    
 }

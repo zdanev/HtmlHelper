@@ -80,5 +80,9 @@ namespace HtmlHelper.Bootstrap
         public static ModalFooter ModalFooter(params BodyElement[] content) => new ModalFooter(content);
         
         public static ModalTitle ModalTitle(params BodyElement[] content) => new ModalTitle(content);
+
+        public static ScriptElement ShowModal(string id) => new ScriptElement($"$(\"#{id}\").modal(\"show\")");
+
+        public static ScriptElement HideModal(string id) => new ScriptElement($"$(\"#{id}\").modal(\"hide\")");
     }
 }

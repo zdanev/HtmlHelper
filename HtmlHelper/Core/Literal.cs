@@ -8,7 +8,7 @@ namespace HtmlHelper
     {
         public string Value { get; }
 
-        protected Literal() : base(null)
+        private Literal() : base(null)
         {
         }
 

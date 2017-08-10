@@ -24,6 +24,23 @@ namespace HtmlHelper
         }
     }
 
+    public class ScriptElement : Literal, IScriptElement
+    {
+        public ScriptElement(string value) : base(value)
+        {            
+        }
+
+        public override string ToString()
+        {
+            return Value;
+        }
+
+        public static implicit operator ScriptElement(string value)
+        {
+            return new ScriptElement(value);
+        }
+    }
+
     public static partial class FluentApi
     {
         public static ExtScript ExtScript(string src) => new ExtScript(src);

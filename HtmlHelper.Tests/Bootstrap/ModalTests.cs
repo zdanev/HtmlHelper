@@ -47,5 +47,18 @@ namespace HtmlHelper.Tests
                 "</div>",
                 html);
         }
+
+        [Fact]
+        public void ButtonShowModalTest()
+        {
+            // arrange
+            var button = new Button("Show Modal").OnClick(ShowModal("my-modal"));
+
+            // act
+            var html = button.Render();
+
+            // assert
+            Assert.Equal("<button type='button' onclick='$(\"#my-modal\").modal(\"show\")'>Show Modal</button>", html);
+        }
     }
 }
