@@ -6,10 +6,10 @@ using static HtmlHelper.Bootstrap.FluentApi;
 
 namespace HtmlHelper.Tests
 {
-    public class IntegrationTests
+    public class DemoTests
     {
         [Fact]
-        public void IntegrationTest()
+        public void Demo1()
         {
             // arrange
             var page = new BootstrapPage("test",
@@ -27,11 +27,28 @@ namespace HtmlHelper.Tests
                         Cell(
                             DismissibleAlert(AlertType.Success, "Success!")
                         )
+                    ),
+                    Row(
+                        Cell(
+                            Button(ButtonType.Primary, "Show Modal").OnClick(ShowModal("my-modal"))
+                        )
                     )
                 ),
                 Footer(
                     Span("footer").Class("text-muted")
-                )
+                ),
+                Modal(
+                    ModalHeader(
+                        ModalTitle("Modal Title")
+                    ),
+                    ModalBody(
+                        P("Modal Body Text")
+                    ),
+                    ModalFooter(
+                        Button(ButtonType.Primary, "Save Changes"),
+                        Button(ButtonType.Secondary, "Close").Attr("data-dismiss", "modal") // todo
+                    )
+                ).Id("my-modal")
             );
             
             // act

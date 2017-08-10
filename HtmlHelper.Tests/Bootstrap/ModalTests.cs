@@ -52,7 +52,7 @@ namespace HtmlHelper.Tests
         public void ButtonShowModalTest()
         {
             // arrange
-            var button = new Button("Show Modal").OnClick(ShowModal("my-modal"));
+            var button = Button("Show Modal").OnClick(ShowModal("my-modal"));
 
             // act
             var html = button.Render();
