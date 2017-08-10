@@ -83,34 +83,28 @@ namespace HtmlHelper.Bootstrap
     
     public static partial class FluentApi
     {
-        public static Button Button(ButtonType type, params BodyElement[] content)
-        {
-            return new Button(type, content);
-        } 
+        public static Button Button(ButtonType type, params BodyElement[] content) => new Button(type, content);
+
+        public static Button PrimaryButton(params BodyElement[] content) => new Button(ButtonType.Primary, content);
                
-        public static Button Button(ButtonType type, ButtonSize size, params BodyElement[] content)
-        {
-            return new Button(type, size, content);
-        } 
+        public static Button SecondaryButton(params BodyElement[] content) => new Button(ButtonType.Secondary, content);
+
+        public static Button SuccessButton(params BodyElement[] content) => new Button(ButtonType.Success, content);
+
+        public static Button DangerButton(params BodyElement[] content) => new Button(ButtonType.Danger, content);
+
+        public static Button InfoButton(params BodyElement[] content) => new Button(ButtonType.Info, content);
+
+        public static Button WarningButton(params BodyElement[] content) => new Button(ButtonType.Warning, content);
+
+        public static Button Button(ButtonType type, ButtonSize size, params BodyElement[] content) => new Button(type, size, content);
                
-        public static BlockButton BlockButton(ButtonType type, ButtonSize size, params BodyElement[] content)
-        {
-            return new BlockButton(type, size, content);
-        } 
+        public static BlockButton BlockButton(ButtonType type, ButtonSize size, params BodyElement[] content) => new BlockButton(type, size, content);
                
-        public static BlockButton BlockButton(ButtonType type, params BodyElement[] content)
-        {
-            return new BlockButton(type, content);
-        } 
+        public static BlockButton BlockButton(ButtonType type, params BodyElement[] content) => new BlockButton(type, content);
                
-        public static OutlineButton OutlineButton(ButtonType type, params BodyElement[] content)
-        {
-            return new OutlineButton(type, content);
-        }        
+        public static OutlineButton OutlineButton(ButtonType type, params BodyElement[] content) => new OutlineButton(type, content);
                
-        public static OutlineButton OutlineButton(ButtonType type, ButtonSize size, params BodyElement[] content)
-        {
-            return new OutlineButton(type, size, content);
-        }        
+        public static OutlineButton OutlineButton(ButtonType type, ButtonSize size, params BodyElement[] content) => new OutlineButton(type, size, content);
     }
 }

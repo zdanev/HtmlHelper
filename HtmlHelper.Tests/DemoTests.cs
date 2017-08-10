@@ -30,7 +30,7 @@ namespace HtmlHelper.Tests
                     ),
                     Row(
                         Cell(
-                            Button(ButtonType.Primary, "Show Modal").OnClick(ShowModal("my-modal"))
+                            PrimaryButton("Show Modal").OnClick(ShowModal("my-modal"))
                         )
                     )
                 ),
@@ -55,7 +55,7 @@ namespace HtmlHelper.Tests
             var html = page.Render();
 
             // assert
-            html.SaveToFile(".\\test.html");
+            html.SaveToFile(".\\demo1.html");
         }
     }
 }

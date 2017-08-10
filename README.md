@@ -10,3 +10,9 @@ Assert.Equal(
     "<button type='button' id='my-button' onclick='buttonClicked();'>Click Me</button>", 
     button.Render());
 ```
+
+or even better...
+
+```
+PrimaryButton("Show Modal").OnClick(ShowModal("my-modal"))
+```
